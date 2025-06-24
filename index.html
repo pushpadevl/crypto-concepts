@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Notes</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">tailwind.config = {
+      theme: {
+        extend: {},
+      },
+      plugins: [tailwind.typography]
+    }</script>
+
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style>
     ::-webkit-scrollbar {
@@ -34,9 +40,16 @@
 
       <!-- Heading -->
       <div class="flex items-center justify-between px-2">
-        <h1 class="text-2xl font-bold mb-4 transition-all duration-300 ease-in-out whitespace-nowrap overflow-hidden"
-            :class="isHovering ? 'opacity-100' : 'opacity-0'">📘 Topics</h1>
-        <h1 class="text-2xl font-bold mb-4" x-show="!isHovering">📘</h1>
+        <button @click="selectedTopic = null; selectedSubtopic = null; activeFile = null"
+                class="text-2xl font-bold mb-4 focus:outline-none transition-all duration-300 ease-in-out whitespace-nowrap overflow-hidden">
+          <span x-show="isHovering">🏠 Home</span>
+          <span x-show="!isHovering">🏠</span>
+        </button>
+        <!--
+          <h1 class="text-2xl font-bold mb-4 transition-all duration-300 ease-in-out whitespace-nowrap overflow-hidden"
+          :class="isHovering ? 'opacity-100' : 'opacity-0'">📘 Topics</h1>
+          <h1 class="text-2xl font-bold mb-4" x-show="!isHovering">📘</h1>
+          -->
       </div>
 
       <!-- Topic Buttons -->
@@ -76,9 +89,7 @@
 <div class="flex-1 p-6 overflow-auto">
   <template x-if="!selectedTopic">
     <div class="text-gray-700 ml-16">
-      <h2 class="text-3xl font-bold mb-4">Hello fellow nerd.</h2>
-      <img src="./images/me.jpg" class="rounded-full w-31 h-40 mb-4" alt="My Photo">
-      <p class="text-lg ">Hi, I'm Pushpendra. Here you'll find organized notes on topics like Number Theory, Cryptography and more. Use the sidebar to explore each category.</p>
+       <iframe src="./home.html" class="w-full h-[90vh] border-none"></iframe>
     </div>
   </template>
 
@@ -88,7 +99,8 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <template x-for="(file, idx) in topics[selectedTopic].subtopics[selectedSubtopic].files" :key="idx">
           <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition relative group cursor-pointer"
-               @click="activeFile = file; showFileList = true">
+               @click="selectFile(file); showFileList = true">
+
             <img :src="file.thumbnail" alt="Thumbnail" class="w-full h-40 object-cover" />
             <div class="p-3 bg-gray-800 text-white text-center text-lg" x-text="file.name"></div>
             <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm p-4 text-center" x-text="file.caption"></div>
@@ -106,7 +118,15 @@
           <h2 class="text-xl font-semibold text-gray-700" x-text="activeFile.name"></h2>
           <button class="text-sm text-blue-600 hover:underline" @click="activeFile = null; showFileList = false">← Back to Subtopics</button>
         </div>
-        <iframe :src="activeFile.path" class="w-full h-[80vh] border rounded-lg shadow-lg bg-white"></iframe>
+        <div>
+        <template x-if="activeFile.type === 'file'">
+          <iframe :src="activeFile.path" class="w-full h-[80vh] border rounded-lg shadow-lg bg-white"></iframe>
+        </template>
+        <template x-if="activeFile.type === 'html'">
+          <div class="prose max-w-full bg-white p-6 rounded-lg shadow" x-html="activeFile.content"></div>
+        </template>
+      </div>
+
       </div>
 
       <div
@@ -136,194 +156,7 @@
   </template>
 </div>
 
-<script>
-function notesApp() {
-  return {
-    isHovering:false,
-    selectedTopic: null,
-    selectedSubtopic: null,
-    showSidebar: window.innerWidth >= 1024,
-    activeFile: null,
-    showFileList: false,
-    topics: {
-      math: {
-        name: 'Number theory',
-        subtopics: [
-          {
-            name: 'Group Theory',
-            files: [
-              {
-                name: 'Stanford GT notes',
-                path: './Docs/Number_Theory/Stanford_GT/Stanford_GT_NOTES.pdf',
-                thumbnail: './images/qr.png',
-                caption: 'Quadratic residues, Field extensions, Polynomial irreducibility'
-              },
-              {
-                name: 'Primality testing',
-                path: './Docs/Number_Theory/Primality_tests/AKS_primality_v6.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'AKS primaility testing'
-              }
-            ]
-          }
-        ]
-      },
-      misc: {
-        name: 'Miscellaneous',
-        subtopics: [
-          {
-            name: 'Quantum_crypto',
-            files: [
-              {
-                name: 'FFT',
-                path: './Docs/Miscellaneous/Quantum_crypto/fft.pdf',
-                thumbnail: './images/fftimg.png',
-                caption: 'Fast fourier transform'
-              },
-              {
-                name: 'Shor\'s original paper',
-                path: './Docs/Miscellaneous/Quantum_crypto/shors.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Shors factoring'
-              }
-            ]
-          }
-        ]
-      },
-      zkp: {
-        name: 'ZK Proofs',
-        subtopics: [
-          {
-            name: 'PLONK',
-            files: [
-              {
-                name: 'PLONK paper',
-                path: './Docs/ZKP/PLONK/Plonk_2019-953.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Quick sort algorithm'
-              },
-              {
-                name: 'Permutation Check',
-                path: './Docs/ZKP/PLONK/Permutation_check___PLONK.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Permutation check'
-              }
-            ]
-          },
-	  {
-            name: 'GKR IP',
-            files: [
-              {
-                name: 'GKR Notes',
-                path: './Docs/ZKP/GKR/GKR.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'GKR Interactive Proof protocol'
-              },
-            ]
-          },
-          {
-            name: 'Elliptic_curves',
-            files: [
-              {
-                name: 'Bilinear Pairings',
-                path: './Docs/ZKP/Elliptic_curves/pairings.pdf',
-                thumbnail: './images/pairings.png',
-                caption: 'Pairing'
-              },
-              {
-                name: 'Hash to curve',
-                path: './Docs/ZKP/Elliptic_curves/Paper_hash2curve.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Hash to curve algorithms'
-              },
-              {
-                name: 'Isogenies',
-                path: './Docs/ZKP/Elliptic_curves/isogney_paper.pdf',
-                thumbnail: './images/ecs.png',
-                caption: 'Isogenies over EC'
-              }
-            ]
-          },
-          
-          {
-            name: 'Study material',
-            files: [
-              {
-                name: 'ProofsArgs&ZK',
-                path: './Docs/ZKP/StuMat/ProofsArgsAndZK.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Justin Thaler'
-              },
-              {
-                name: 'SNARKs lineage',
-                path: './Docs/ZKP/StuMat/SIgma_ZKP_SNARKs_relation.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Relationship between Sigma protocols, SNARKs and ZK proofs'
-              },
-              {
-                name: 'Survey SNARKs',
-                path: './Docs/ZKP/StuMat/Survey-SNARKs.pdf',
-                thumbnail: './images/zk-make.png',
-                caption: 'Short notes on ZK snark'
-              },
-              {
-                name: 'PAZK_C7',
-                path: './Docs/ZKP/StuMat/PAZK_C7.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Personal notes of Chapter 7'
-              },
-              {
-                name: 'Zokrates',
-                path: './Docs/ZKP/StuMat/Zokrates.pdf',
-                thumbnail: './images/default.jpg',
-                caption: 'Slides on Zokrates toolkit'
-              }
-              
-            ]
-          },
-          
-        ]
-      },
-      abtme: {
-        name: 'About me',
-        subtopics: [
-          {
-            name: 'Interesting facts',
-            files: [
-              {
-                name: 'Introduction',
-                path: './elliptic_curves.pdf',
-                thumbnail: 'https://picsum.photos/id/1018/300/180',
-                caption: 'Basics of elliptic curves'
-              },
-            ]
-          }
-        ]
-      },
-    },
-    toggleTopic(topicKey) {
-      if (this.selectedTopic === topicKey) {
-        this.selectedTopic = null;
-      } else {
-        this.selectedTopic = topicKey;
-        this.selectedSubtopic = null;
-        this.activeFile = null;
-      }
-    },
-    handleTopicClick(topicKey) {
-      
-      this.selectedTopic = topicKey;
-      const subtopics = this.topics[topicKey].subtopics;
-      this.selectedSubtopic = subtopics && subtopics.length >0 ?0 :null;
-      this.activeFile = null;
-    },
-    selectSubtopic(index) {
-      this.selectedSubtopic = index;
-      this.activeFile = null;
-    }
-  };
-}
-</script>
+<script src="./notesApp.js"></script>
 
 </body>
 </html>
