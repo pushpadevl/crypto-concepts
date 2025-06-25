@@ -1,9 +1,61 @@
 <!DOCTYPE html>
-<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
 
-    <h2 class="text-3xl font-bold mb-4">Hello fellow nerd.</h2>
-    <img src="./images/me.png" width="250" height="333" alt="My Photo">
-    <p class="text-lg ">I'm Pushpendra. Here you'll find organized notes on topics like Number Theory, Cryptography and more. Use the sidebar to explore each category.</p>
+    .container {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .column {
+      flex: 1;
+      border: 1px;;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      width: min-content;
+      height: min-content; /* Optional: control vertical space */
+      overflow-y:inherit;
+    }
+    .image{
+        height: fit-content;
+        width:fit-content;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
     
+<body>
+    <h2 class="text-3xl font-bold mb-4">Hello fellow nerd.</h2>
+    
+    <div class="container">
+        <div class="image">
+        <img src="./images/me.png" width="250" height="333" alt="">
+        </div>
+        <div class="column">
+        <p class="text-lg">
+            I'm Pushpendra. Here you'll find organized notes on topics like Number Theory, Cryptography and more. Use the sidebar to explore each category.</p>
+        </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="column">
+            <p class="text-1g"> Photography website. It is here just to remind me that I still have something to fall back to when things get overwhelming.</p>
+        </div>
+        <div class="column">
+            <iframe src="https://ellealzahra.wordpress.com"></iframe>
+        </div>
+        
+    <div 
 </body>
 </html>

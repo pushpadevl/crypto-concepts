@@ -1,11 +1,11 @@
 
 function notesApp() {
   return {
-    isHovering:false,
     selectedTopic: null,
     selectedSubtopic: null,
     showSidebar: window.innerWidth >= 1024,
     activeFile: null,
+    openDropdown:{},
     showFileList: false,
     topics: {
       math: {
@@ -27,30 +27,6 @@ function notesApp() {
                 path: './Docs/Number_Theory/Primality_tests/AKS_primality_v6.pdf',
                 thumbnail: './images/prime.png',
                 caption: 'AKS primaility testing'
-              }
-            ]
-          }
-        ]
-      },
-      misc: {
-        name: 'Miscellaneous',
-        subtopics: [
-          {
-            name: 'Quantum_crypto',
-            files: [
-              {
-                name: 'FFT',
-                type: 'file',
-                path: './Docs/Miscellaneous/Quantum_crypto/fft.pdf',
-                thumbnail: './images/fftimg.png',
-                caption: 'Fast fourier transform'
-              },
-              {
-                name: 'Shor\'s original paper',
-                type: 'file',
-                path: './Docs/Miscellaneous/Quantum_crypto/shors.pdf',
-                thumbnail: './images/shor.png',
-                caption: 'Shors factoring'
               }
             ]
           }
@@ -181,6 +157,69 @@ function notesApp() {
           
         ]
       },
+      misc: {
+        name: 'Miscellaneous',
+        subtopics: [
+          {
+            name: 'Quantum_crypto',
+            files: [
+              {
+                name: 'FFT',
+                type: 'file',
+                path: './Docs/Miscellaneous/Quantum_crypto/fft.pdf',
+                thumbnail: './images/fftimg.png',
+                caption: 'Fast fourier transform'
+              },
+              {
+                name: 'Shor\'s original paper',
+                type: 'file',
+                path: './Docs/Miscellaneous/Quantum_crypto/shors.pdf',
+                thumbnail: './images/shor.png',
+                caption: 'Shors factoring'
+              }
+            ]
+          },
+          {
+            name: 'Handwritten notes',
+            files: [
+              {
+                name: 'Blockchain',
+                type: 'file',
+                path: './Docs/Miscellaneous/Handwritten\ notes/BLK.pdf',
+                thumbnail: './images/default.png',
+                caption: ''
+              },
+              {
+                name: 'Cryptography',
+                type: 'file',
+                path: './Docs/Miscellaneous/Handwritten\ notes/CRYP.pdf',
+                thumbnail: './images/default.png',
+                caption: ''
+              },
+              {
+                name: 'Design Analysis of Algorithms',
+                type: 'file',
+                path: './Docs/Miscellaneous/Handwritten\ notes/DAA.pdf',
+                thumbnail: './images/default.png',
+                caption: ''
+              },
+              {
+                name: 'Integral Domains',
+                type: 'file',
+                path: './Docs/Miscellaneous/Handwritten\ notes/ED_PID_UFD.pdf',
+                thumbnail: './images/default.png',
+                caption: ''
+              },
+              {
+                name: 'Quantum cryptography',
+                type: 'file',
+                path: './Docs/Miscellaneous/Handwritten\ notes/QNTM.pdf',
+                thumbnail: './images/default.png',
+                caption: ''
+              },
+
+        ]
+      }]},
       res: {
         name: 'Resources',
         subtopics: [
@@ -225,24 +264,16 @@ function notesApp() {
         ]
       },
     },
-    toggleTopic(topicKey) {
-      if (this.selectedTopic === topicKey) {
-        this.selectedTopic = null;
-      } else {
-        this.selectedTopic = topicKey;
-        this.selectedSubtopic = null;
-        this.activeFile = null;
-      }
-    },
-    handleTopicClick(topicKey) {
+    selectTopicAndSubtopic(topicKey, subIndex) {
       
       this.selectedTopic = topicKey;
-      const subtopics = this.topics[topicKey].subtopics;
-      this.selectedSubtopic = subtopics && subtopics.length >0 ?0 :null;
+      this.selectedSubtopic = subIndex;
       this.activeFile = null;
     },
-    selectSubtopic(index) {
-      this.selectedSubtopic = index;
+    toggleDropdown(topicKey){
+      this.openDropdown[topicKey] = !this.openDropdown[topicKey];
+      this.selectedTopic = topicKey;
+      this.selectedSubtopic = null;
       this.activeFile = null;
     },
     selectFile(file) {
