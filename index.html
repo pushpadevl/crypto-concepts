@@ -28,62 +28,39 @@
      ">
 
 <div class="flex h-screen relative">
-  <!-- Topic Sidebar with curtain-reveal hover -->
-  <!-- Outer wrapper with fixed width -->
-  <div class="absolute top-0 left-0 h-full transition-all duration-300 ease-in-out"
-       :class="isHovering ? 'w-72' : 'w-16'"
-       @mouseenter="isHovering = true"
-       @mouseleave="isHovering = false">
 
-    <!-- Sliding content (curtain reveal) -->
-    <div class="bg-teal-900 text-gray-100 h-full overflow-hidden transition-all duration-300 ease-in-out flex flex-col p-1">
-
-      <!-- Heading -->
-      <div class="flex items-center justify-between px-2">
-        <button @click="selectedTopic = null; selectedSubtopic = null; activeFile = null"
-                class="text-2xl font-bold mb-4 focus:outline-none transition-all duration-300 ease-in-out whitespace-nowrap overflow-hidden">
-          <span x-show="isHovering">🏠 Home</span>
-          <span x-show="!isHovering">🏠</span>
-        </button>
-        <!--
-          <h1 class="text-2xl font-bold mb-4 transition-all duration-300 ease-in-out whitespace-nowrap overflow-hidden"
-          :class="isHovering ? 'opacity-100' : 'opacity-0'">📘 Topics</h1>
-          <h1 class="text-2xl font-bold mb-4" x-show="!isHovering">📘</h1>
-          -->
-      </div>
-
-      <!-- Topic Buttons -->
-      <ul class="space-y-2 mt-6">
-        <template x-for="(topic, key) in topics" :key="key">
-          <li>
-            <button @click="handleTopicClick(key)"
-                    :class="selectedTopic === key ? 'bg-teal-700 text-white' : 'hover:bg-teal-600 hover:text-white'"
-                    class="w-full text-left text-lg font-medium px-3 py-2 rounded transition flex items-center space-x-1">
-              <span class="transition-all duration-300 ease-in-out whitespace-nowrap overflow-hidden"
-                    :class="isHovering ? 'opacity-100 max-w-full' : 'opacity-0 max-w-0'"
-                    x-text="topic.name"></span>
-              <span x-show="!isHovering" x-text="topic.name.substring(0,2)"></span>
-            </button>
-          </li>
-        </template>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Subtopics Sidebar -->
-  <div class="ml-16 w-56 bg-yellow-700 text-white p-4 overflow-y-auto" x-show="selectedTopic">
-    <h2 class="text-xl font-bold mb-4" x-text="topics[selectedTopic].name"></h2>
-    <ul class="space-y-2">
-      <template x-for="(subtopic, index) in topics[selectedTopic].subtopics" :key="index">
-        <li>
-          <button @click="selectSubtopic(index)"
-                  class="w-full text-left bg-yellow-600 hover:bg-yellow-500 px-3 py-2 rounded transition">
-            <span x-text="subtopic.name"></span>
+  <!-- Combined Sidebar -->
+<div class="bg-teal-900 text-white text-left w-64 p-5 overflow-y-auto">
+  <button @click="selectedTopic = null; selectedSubtopic = null; activeFile = null"
+                class="text-2xl font-bold mb-4 focus:outline-none transition-all hover:bg-opacity-10 duration-300 ease-in-out whitespace-nowrap overflow-hidden">
+          🏠 Home
           </button>
-        </li>
-      </template>
-    </ul>
-  </div>
+  <ul class="space-y-2">
+    <template x-for="[topicKey, topicValue] in Object.entries(topics)" :key="topicKey">
+      <li>
+        <!-- Topic Button -->
+        <div>
+          <button @click="toggleDropdown(topicKey)"
+                  class="w-full text-left px-3 py-2 font-medium rounded hover:bg-teal-700 transition-all duration-300 ease-in-out"
+                  :class="selectedTopic === topicKey ? 'bg-teal-700' : ''">
+            <span x-text="topicValue.name"></span>
+          </button>
+        </div>
+
+        <!-- Subtopics Dropdown -->
+        <ul x-show="openDropdown[topicKey]" x-transition class="ml-4 mt-1 space-y-1 transition-all duration-300 ease-in-out">
+          <template x-for="(subtopic, index) in topicValue.subtopics" :key="index">
+            <li><button @click="selectTopicAndSubtopic(topicKey, index)"
+                      class="w-full text-left px-3 py-2 text-sm hover:bg-orange-500 bg-orange-600 rounded">
+                 <span x-text="subtopic.name"></span>
+              </button>
+            </li>
+          </template>
+        </ul>
+      </li>
+    </template>
+  </ul>
+</div>
 
 <!-- Main Content Area -->
 <div class="flex-1 p-6 overflow-auto">
@@ -146,7 +123,7 @@
 
       <!-- Toggle sub subtopic sidebar visibility-->
        <button
-          class="fixed top-1/3 right-1 -translate-t-1/2 bg-orange-400 text-white px-1/2 py-10 rounded shadow lg:hidden"
+          class="fixed top-1/3 right-1 -translate-t-1/2 bg-orange-400 text-white px-1/2 py-10 rounded shadow "
           @click="showSidebar = !showSidebar"
         >
           {}
