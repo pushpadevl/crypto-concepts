@@ -186,35 +186,35 @@ function notesApp() {
                 name: 'Blockchain',
                 type: 'file',
                 path: './Docs/Miscellaneous/Handwritten\ notes/BLK.pdf',
-                thumbnail: './images/default.png',
+                thumbnail: './images/default.jpg',
                 caption: ''
               },
               {
                 name: 'Cryptography',
                 type: 'file',
                 path: './Docs/Miscellaneous/Handwritten\ notes/CRYP.pdf',
-                thumbnail: './images/default.png',
+                thumbnail: './images/default.jpg',
                 caption: ''
               },
               {
                 name: 'Design Analysis of Algorithms',
                 type: 'file',
                 path: './Docs/Miscellaneous/Handwritten\ notes/DAA.pdf',
-                thumbnail: './images/default.png',
+                thumbnail: './images/default.jpg',
                 caption: ''
               },
               {
                 name: 'Integral Domains',
                 type: 'file',
                 path: './Docs/Miscellaneous/Handwritten\ notes/ED_PID_UFD.pdf',
-                thumbnail: './images/default.png',
+                thumbnail: './images/default.jpg',
                 caption: ''
               },
               {
                 name: 'Quantum cryptography',
                 type: 'file',
                 path: './Docs/Miscellaneous/Handwritten\ notes/QNTM.pdf',
-                thumbnail: './images/default.png',
+                thumbnail: './images/default.jpg',
                 caption: ''
               },
 
