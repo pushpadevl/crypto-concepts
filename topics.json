@@ -10,14 +10,14 @@
             "type": "file",
             "path": "./Docs/Number_Theory/Stanford_GT/Stanford_GT_NOTES.pdf",
             "thumbnail": "./images/qr.png",
-            "caption": "Quadratic residues, Field extensions, Polynomial irreducibility"
+            "caption": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
           },
           {
             "name": "Primality testing",
             "type": "file",
             "path": "./Docs/Number_Theory/Primality_tests/AKS_primality_v6.pdf",
             "thumbnail": "./images/prime.png",
-            "caption": "AKS primaility testing"
+            "caption": "AKS primaility testing, prime numbers, deterministic primality tests"
           }
         ]
       }
@@ -34,7 +34,7 @@
             "type": "file",
             "path": "./Docs/ZKP/PLONK/Plonk_2019-953.pdf",
             "thumbnail": "./images/plonk.png",
-            "caption": "PLONK research paper"
+            "caption": "PLONK research paper, SNARK protocol, permutation check, polynomial commitment scheme"
           },
           {
             "name": "Permutation Check",
@@ -53,14 +53,14 @@
             "type": "file",
             "path": "./Docs/ZKP/GKR/GKR.pdf",
             "thumbnail": "./images/gkr.png",
-            "caption": "GKR Interactive Proof protocol"
+            "caption": "GKR Interactive Proof protocol, Multi-linear Extensions, Lagrange basis"
           },
           {
             "name": "Reduction",
             "type": "file",
             "path": "./Docs/ZKP/GKR/Multiple_poly_eval_reduction.pdf",
             "thumbnail": "./images/reduc.png",
-            "caption": "Reduction of multiple polynomial evaluation verification to one"
+            "caption": "Reduction of multiple polynomial evaluation verification to one, Multi-linear extensions"
           }
         ]
       },
@@ -86,7 +86,7 @@
             "type": "file",
             "path": "./Docs/ZKP/Elliptic_curves/isogney_paper.pdf",
             "thumbnail": "./images/isogeny.png",
-            "caption": "Isogenies over EC"
+            "caption": "Isogenies over Elliptic Curves, Post Quantum cryptography"
           }
         ]
       },
@@ -105,7 +105,7 @@
             "type": "file",
             "path": "./Docs/ZKP/PAZK_C7/Relaxed_PCS.pdf",
             "thumbnail": "./images/pazkc7.png",
-            "caption": "Personal notes of Chapter 7"
+            "caption": "Merkle tree and Low degree test based relaxed polynomial commitment scheme"
           }
         ]
       },
@@ -117,7 +117,7 @@
             "type": "file",
             "path": "./Docs/ZKP/StuMat/ProofsArgsAndZK.pdf",
             "thumbnail": "./images/pazk.png",
-            "caption": "manuscript by Justin Thaler"
+            "caption": "manuscript by Justin Thaler, zero knowledge proofs, interactive proofs, non-interactive proofs, SNARKs, Succinct arguments, PLONK, Groth, KZG, Dory"
           },
           {
             "name": "SNARKs lineage",
@@ -138,7 +138,7 @@
             "type": "file",
             "path": "./Docs/ZKP/StuMat/Zokrates.pdf",
             "thumbnail": "./images/zok.png",
-            "caption": "Slides on Zokrates toolkit"
+            "caption": "Slides on Zokrates toolkit, zero knowledge proofs, zk-SNARKs"
           }
         ]
       }
@@ -155,14 +155,14 @@
             "type": "file",
             "path": "./Docs/Miscellaneous/Quantum_crypto/fft.pdf",
             "thumbnail": "./images/fftimg.png",
-            "caption": "Fast fourier transform"
+            "caption": "Fast fourier transform, Quantum cryptography, polynomial multiplication"
           },
           {
             "name": "Shor's original paper",
             "type": "file",
             "path": "./Docs/Miscellaneous/Quantum_crypto/shors.pdf",
             "thumbnail": "./images/shor.png",
-            "caption": "Shors factoring"
+            "caption": "Shors factoring, number theory, quantum cryptography"
           }
         ]
       },
@@ -174,35 +174,35 @@
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/BLK.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": ""
+            "caption": "blockchain, consensus mechanisms, sybil resistance, "
           },
           {
             "name": "Cryptography",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/CRYP.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": ""
+            "caption": "Multi Party Computation, Signatures, Hashing, Pseudo-random generator, function, Elgamal"
           },
           {
             "name": "Design Analysis of Algorithms",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/DAA.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": ""
+            "caption": "Matrix multiplication, Strassen's algortihm, "
           },
           {
             "name": "Integral Domains",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/ED_PID_UFD.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": ""
+            "caption": "Integral domain, Euclidean domain, Principal ideal domain, Unique factorization domain"
           },
           {
             "name": "Quantum cryptography",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/QNTM.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": ""
+            "caption": "quantum gates, hadamard transform, teleportation, chsh game, shor's algortihm, grover's, quantum key distribution"
           }
         ]
       }
@@ -220,7 +220,7 @@
             "htmlPath": "./Docs/Bookmarks/os_net/prog.html",
             "content": "",
             "thumbnail": "./images/os.jpg",
-            "caption": ""
+            "caption": "parrot, fedora, redox, linux, ubuntu, arch, kali"
           },
           {
             "name": "Programming",
@@ -228,7 +228,7 @@
             "htmlPath": "./Docs/Bookmarks/Programming/prog.html",
             "content": "",
             "thumbnail": "./images/prog.jpg",
-            "caption": ""
+            "caption": "dsa, hackerearth, hackerrank, codechef, codeforces"
           },
           {
             "name": "ZK & Blockchain",
@@ -236,7 +236,7 @@
             "htmlPath": "./Docs/Bookmarks/zk_bc/prog.html",
             "content": "",
             "thumbnail": "./images/bc.jpg",
-            "caption": ""
+            "caption": "solana, ethereum, metamask, bitcoin, zk proofs, circom, solidity"
           },
           {
             "name": "Misc",
