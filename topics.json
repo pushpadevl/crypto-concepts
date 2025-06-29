@@ -144,6 +144,23 @@
       }
     ]
   },
+  "clcry": {
+    "name": "Classical Crypto",
+    "subtopics": [
+      {
+        "name": "Oblivious Transfer",
+        "files": [
+          {
+            "name": "Micali & Bellare OT",
+            "type": "file",
+            "path": "./Docs/OT_MPC/OT/micali_bellare.pdf",
+            "thumbnail": "./images/otr.png",
+            "caption": "Oblivious transfer, Micali, Bellare, Hash, Encryption, Discrete Logarithm, classical cryptography"
+          }
+        ]
+      }
+    ]
+  },
   "misc": {
     "name": "Miscellaneous",
     "subtopics": [
