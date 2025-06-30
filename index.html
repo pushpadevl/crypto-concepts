@@ -30,11 +30,7 @@
        init();
      ">
 
-
-
-
-  
-  <!--Main body area with sidebar and content-->
+<!--Main body area with sidebar and content-->
 <div class="flex min-h-screen">
 
   <!-- Combined Sidebar -->
@@ -49,8 +45,8 @@
           <!-- Topic Button -->
           <div>
             <button @click="toggleDropdown(topicKey)"
-                    class="w-full text-left px-3 py-2 font-medium rounded hover:bg-teal-700 transition-all duration-300 ease-in-out"
-                    :class="selectedTopic === topicKey ? 'bg-teal-700' : ''">
+                    class="w-full text-left px-3 py-2 font-medium rounded hover:bg-orange-600 transition-all duration-300 ease-in-out"
+                    :class="selectedTopic === topicKey ? 'bg-orange-700' : ''">
               <span x-text="topicValue.name"></span>
             </button>
           </div>
@@ -59,7 +55,9 @@
           <ul x-show="openDropdown[topicKey]" x-transition class="ml-4 mt-1 space-y-1 transition-all duration-300 ease-in-out">
             <template x-for="(subtopic, index) in topicValue.subtopics" :key="index">
               <li><button @click="selectTopicAndSubtopic(topicKey, index)"
-                        class="w-full text-left px-3 py-2 text-sm hover:bg-orange-500 bg-orange-600 rounded">
+                        class="w-full text-left px-3 py-2 text-sm hover:bg-orange-600 bg-orange-500 rounded"
+                        
+                        :class="selectedTopic === topicKey && selectedSubtopic === index ? 'bg-orange-600' : ''">
                   ⤷ <span x-text="subtopic.name"></span>
                 </button>
               </li>
@@ -71,7 +69,7 @@
   </div>
 
 <!-- Main Content Area -->
-  <div class="flex flex-col flex-1 min-h-screen p-3">
+  <div class="flex flex-col flex-1 p-3">
       <!-- Header Bar -->
     <header class="text-gray-500 text-center px-4 py-3 flex justify-between items-center w-full">
       <div class="text-xl font-bold"></div>
@@ -91,7 +89,7 @@
     <div class="flex-1">
       <template x-if="!isSearching && !selectedTopic">
         <div class="text-gray-700 ml-0">
-          <iframe src="https://pushpadevl.github.io" class="w-full h-[90vh] rounded-xl  backdrop-blur-sm"></iframe>
+          <iframe src="https://pushpadevl.github.io" class="w-full h-[100vh] rounded-xl  backdrop-blur-sm"></iframe>
         </div>
       </template>
 
@@ -179,8 +177,8 @@
       </template>
 
     </div>
-    <footer class="text-gray-500 text-center text-sm py-2">
-        © 2025 <a href="https://www.github.com/pushpadevl" target="_blank" hover="underline">pushpadevl.</a> Built with ♥ &#xfaa8 for cryptography lovers.
+    <footer class="text-gray-500 text-center text-sm py-1">
+        © 2025 <a href="https://www.github.com/pushpadevl" target="_blank" hover="underline">pushpadevl.</a> ✏️ with ♥ for cryptographers.
     </footer>
     </div>
 </div>
