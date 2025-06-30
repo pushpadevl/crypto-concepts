@@ -45,8 +45,8 @@
           <!-- Topic Button -->
           <div>
             <button @click="toggleDropdown(topicKey)"
-                    class="w-full text-left px-3 py-2 font-medium rounded hover:bg-orange-600 transition-all duration-300 ease-in-out"
-                    :class="selectedTopic === topicKey ? 'bg-orange-700' : ''">
+                    class="w-full text-left px-3 py-2 font-medium underline hover:bg-teal-800 transition-all duration-300 ease-in-out"
+                    :class="selectedTopic === topicKey ? 'bg-teal-700' : ''">
               <span x-text="topicValue.name"></span>
             </button>
           </div>
@@ -55,9 +55,9 @@
           <ul x-show="openDropdown[topicKey]" x-transition class="ml-4 mt-1 space-y-1 transition-all duration-300 ease-in-out">
             <template x-for="(subtopic, index) in topicValue.subtopics" :key="index">
               <li><button @click="selectTopicAndSubtopic(topicKey, index)"
-                        class="w-full text-left px-3 py-2 text-sm hover:bg-orange-600 bg-orange-500 rounded"
+                        class="w-full text-left px-3 py-2 text-sm hover:bg-teal-800 bg-teal-900 rounded"
                         
-                        :class="selectedTopic === topicKey && selectedSubtopic === index ? 'bg-orange-600' : ''">
+                        :class="selectedTopic === topicKey && selectedSubtopic === index ? 'bg-orange-500' : ''">
                   ⤷ <span x-text="subtopic.name"></span>
                 </button>
               </li>
