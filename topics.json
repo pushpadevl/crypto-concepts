@@ -185,6 +185,14 @@
             "thumbnail": "./images/default.jpg",
             "caption": "Convert a CPA secure encryption scheme to a CCA secure one.",
             "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
+          },
+          {
+            "name": "Fujisaki Okamoto on El-Gamal",
+            "type": "file",
+            "path": "./Docs/Classical/Fujisaki_transform/example_claude.pdf",
+            "thumbnail": "./images/default.jpg",
+            "caption": "Example of Fujisaki Okamoto transform",
+            "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
           }
         ]
       }
