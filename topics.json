@@ -10,14 +10,16 @@
             "type": "file",
             "path": "./Docs/Number_Theory/Stanford_GT/Stanford_GT_NOTES.pdf",
             "thumbnail": "./images/qr.png",
-            "caption": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
+            "caption": "Group theory notes",
+            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
           },
           {
             "name": "Primality testing",
             "type": "file",
             "path": "./Docs/Number_Theory/Primality_tests/AKS_primality_v6.pdf",
             "thumbnail": "./images/prime.png",
-            "caption": "AKS primaility testing, prime numbers, deterministic primality tests"
+            "caption": "Deterministic factoring using AKS primality testing algorithm",
+            "tags": "AKS primaility testing, prime numbers, deterministic primality tests"
           }
         ]
       }
@@ -34,14 +36,16 @@
             "type": "file",
             "path": "./Docs/ZKP/PLONK/Plonk_2019-953.pdf",
             "thumbnail": "./images/plonk.png",
-            "caption": "PLONK research paper, SNARK protocol, permutation check, polynomial commitment scheme"
+            "caption": "PLONK research paper",
+            "tags": "PLONK research paper, permutation check, polynomial commitment scheme, KZG, polynomial evaluation, zero knowledge proof, zkSNARK"
           },
           {
             "name": "Permutation Check",
             "type": "file",
             "path": "./Docs/ZKP/PLONK/Permutation_check___PLONK.pdf",
             "thumbnail": "./images/plonkgpp.png",
-            "caption": "Permutation check"
+            "caption": "Used in PLONK to verify that a permutation is valid",
+            "tags": "Permutation check"
           }
         ]
       },
@@ -53,14 +57,16 @@
             "type": "file",
             "path": "./Docs/ZKP/GKR/GKR.pdf",
             "thumbnail": "./images/gkr.png",
-            "caption": "GKR Interactive Proof protocol, Multi-linear Extensions, Lagrange basis"
+            "caption": "GKR Interactive Proof protocols",
+            "tags": "GKR Interactive Proof protocol, Multi-linear Extensions, Lagrange basis"
           },
           {
             "name": "Reduction",
             "type": "file",
             "path": "./Docs/ZKP/GKR/Multiple_poly_eval_reduction.pdf",
             "thumbnail": "./images/reduc.png",
-            "caption": "Reduction of multiple polynomial evaluation verification to one, Multi-linear extensions"
+            "caption": "Reduction of multiple polynomial evaluation verification to one",
+            "tags": "Reduction of multiple polynomial evaluation verification to one, GKR, Sum check, Multi-linear extensions"
           }
         ]
       },
@@ -72,21 +78,24 @@
             "type": "file",
             "path": "./Docs/ZKP/Elliptic_curves/pairings.pdf",
             "thumbnail": "./images/pairings.png",
-            "caption": "Bilinear Pairing over Elliptic curves."
+            "caption": "Pairing notes over elliptic curves.",
+            "tags": "Bilinear Pairing over Elliptic curves."
           },
           {
             "name": "Hash to curve",
             "type": "file",
             "path": "./Docs/ZKP/Elliptic_curves/Paper_hash2curve.pdf",
             "thumbnail": "./images/hash2curve.png",
-            "caption": "Hash to curve algorithms used to map hash values to points on an elliptic curve."
+            "caption": "Used to map hash values to points on an elliptic curve.",
+            "tags": "Hash to curve algorithms used to map hash values to points on an elliptic curve."
           },
           {
             "name": "Isogenies",
             "type": "file",
             "path": "./Docs/ZKP/Elliptic_curves/isogney_paper.pdf",
             "thumbnail": "./images/isogeny.png",
-            "caption": "Isogenies over Elliptic Curves, Post Quantum cryptography"
+            "caption": "Isogenies over Elliptic Curves, Post Quantum cryptography",
+            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, "
           }
         ]
       },
@@ -98,14 +107,16 @@
             "type": "file",
             "path": "./Docs/ZKP/PAZK_C7/Low_Degree_Test.pdf",
             "thumbnail": "./images/ldt.png",
-            "caption": "Line vs Point test"
+            "caption": "Line vs Point test, a type of Low Degree Test",
+            "tags": "Line vs Point test, a type of Low Degree Test, used in relaxed polynomial commitment schemes"
           },
           {
             "name": "Relaxed PCS",
             "type": "file",
             "path": "./Docs/ZKP/PAZK_C7/Relaxed_PCS.pdf",
             "thumbnail": "./images/pazkc7.png",
-            "caption": "Merkle tree and Low degree test based relaxed polynomial commitment scheme"
+            "caption": "PCS using Merkle tree and Low degree test",
+            "tags": "Merkle tree and Low degree test based relaxed polynomial commitment scheme"
           }
         ]
       },
@@ -117,28 +128,32 @@
             "type": "file",
             "path": "./Docs/ZKP/StuMat/ProofsArgsAndZK.pdf",
             "thumbnail": "./images/pazk.png",
-            "caption": "manuscript by Justin Thaler, zero knowledge proofs, interactive proofs, non-interactive proofs, SNARKs, Succinct arguments, PLONK, Groth, KZG, Dory"
+            "caption": "Manuscript by Justin Thaler",
+            "tags": "Zero knowledge proofs, interactive proofs, non-interactive proofs, SNARKs, Succinct arguments, PLONK, Groth, KZG, Dory"
           },
           {
             "name": "SNARKs lineage",
             "type": "file",
             "path": "./Docs/ZKP/StuMat/SIgma_ZKP_SNARKs_relation.pdf",
             "thumbnail": "./images/lineage.png",
-            "caption": "Relationship between Sigma protocols, SNARKs and ZK proofs"
+            "caption": "Connecting the dots in SNARKs, ZK proofs and interactive proofs",
+            "tags": "Relationship between Sigma protocols, SNARKs and ZK proofs"
           },
           {
             "name": "Survey SNARKs",
             "type": "file",
             "path": "./Docs/ZKP/StuMat/Survey-SNARKs.pdf",
             "thumbnail": "./images/zk-make.png",
-            "caption": "Short notes on ZK snark"
+            "caption": "Making SNARKs using IOP and PCS",
+            "tags": "Short notes on ZK snark, Interactive Oracle Proofs, Polynomial Commitment Schemes, SNARKs, ZK proofs, zero knowledge proofs, non-interactive proofs"
           },
           {
             "name": "Zokrates",
             "type": "file",
             "path": "./Docs/ZKP/StuMat/Zokrates.pdf",
             "thumbnail": "./images/zok.png",
-            "caption": "Slides on Zokrates toolkit, zero knowledge proofs, zk-SNARKs"
+            "caption": "A toolkit for zkSNARKs",
+            "tags": "Slides on Zokrates toolkit, zero knowledge proofs, zk-SNARKs"
           }
         ]
       }
@@ -153,9 +168,23 @@
           {
             "name": "Micali & Bellare OT",
             "type": "file",
-            "path": "./Docs/OT_MPC/OT/micali_bellare.pdf",
+            "path": "./Docs/Classical/OT/micali_bellare.pdf",
             "thumbnail": "./images/otr.png",
-            "caption": "Oblivious transfer, Micali, Bellare, Hash, Encryption, Discrete Logarithm, classical cryptography"
+            "caption": "Oblivious transfer protocol by Micali and Bellare.",
+            "tags": "Oblivious transfer, Micali, Bellare, Hash, Encryption, Discrete Logarithm, classical cryptography"
+          }
+        ]
+      },
+      {
+        "name": "Fujisaki Okamoto",
+        "files": [
+          {
+            "name": "Fujisaki Okamoto transform",
+            "type": "file",
+            "path": "./Docs/Classical/Fujisaki_transform/fjok.pdf",
+            "thumbnail": "./images/default.jpg",
+            "caption": "Convert a CPA secure encryption scheme to a CCA secure one.",
+            "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
           }
         ]
       }
@@ -172,14 +201,16 @@
             "type": "file",
             "path": "./Docs/Miscellaneous/Quantum_crypto/fft.pdf",
             "thumbnail": "./images/fftimg.png",
-            "caption": "Fast fourier transform, Quantum cryptography, polynomial multiplication"
+            "caption": "Fast fourier transform",
+            "tags": "Fast fourier transform, Quantum cryptography, polynomial multiplication"
           },
           {
             "name": "Shor's original paper",
             "type": "file",
             "path": "./Docs/Miscellaneous/Quantum_crypto/shors.pdf",
             "thumbnail": "./images/shor.png",
-            "caption": "Shors factoring, number theory, quantum cryptography"
+            "caption": "Shor's quantum factoring algorithm",
+            "tags": "Shors factoring, number theory, quantum cryptography"
           }
         ]
       },
@@ -191,35 +222,40 @@
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/BLK.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "blockchain, consensus mechanisms, sybil resistance, "
+            "caption": "Handwritten notes on blockchain",
+            "tags": "blockchain, consensus mechanisms, sybil resistance"
           },
           {
             "name": "Cryptography",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/CRYP.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Multi Party Computation, Signatures, Hashing, Pseudo-random generator, function, Elgamal"
+            "caption": "Handwritten notes on cryptography",
+            "tags": "Multi Party Computation, Signatures, Hashing, Pseudo-random generator, function, Elgamal"
           },
           {
             "name": "Design Analysis of Algorithms",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/DAA.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Matrix multiplication, Strassen's algortihm, "
+            "caption": "Handwritten notes on algorithms",
+            "tags": "Matrix multiplication, Strassen's algortihm, "
           },
           {
             "name": "Integral Domains",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/ED_PID_UFD.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Integral domain, Euclidean domain, Principal ideal domain, Unique factorization domain"
+            "caption": "Relation and proofs over Integral domains",
+            "tags": "Integral domain, Euclidean domain, Principal ideal domain, Unique factorization domain"
           },
           {
             "name": "Quantum cryptography",
             "type": "file",
             "path": "./Docs/Miscellaneous/Handwritten notes/QNTM.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "quantum gates, hadamard transform, teleportation, chsh game, shor's algortihm, grover's, quantum key distribution"
+            "caption": "Handwritten notes on quantum cryptography",
+            "tags": "quantum gates, hadamard transform, teleportation, chsh game, shor's algortihm, grover's, quantum key distribution"
           }
         ]
       }
@@ -237,7 +273,8 @@
             "htmlPath": "./Docs/Bookmarks/os_net/prog.html",
             "content": "",
             "thumbnail": "./images/os.jpg",
-            "caption": "parrot, fedora, redox, linux, ubuntu, arch, kali"
+            "caption": "Links to resouces on operating systems",
+            "tags": "parrot, fedora, redox, linux, ubuntu, arch, kali"
           },
           {
             "name": "Programming",
@@ -245,7 +282,8 @@
             "htmlPath": "./Docs/Bookmarks/Programming/prog.html",
             "content": "",
             "thumbnail": "./images/prog.jpg",
-            "caption": "dsa, hackerearth, hackerrank, codechef, codeforces"
+            "caption": "Links to programming resources",
+            "tags": "dsa, hackerearth, hackerrank, codechef, codeforces"
           },
           {
             "name": "ZK & Blockchain",
@@ -253,15 +291,17 @@
             "htmlPath": "./Docs/Bookmarks/zk_bc/prog.html",
             "content": "",
             "thumbnail": "./images/bc.jpg",
-            "caption": "solana, ethereum, metamask, bitcoin, zk proofs, circom, solidity"
+            "caption": "Links to zk and blockchain resources",
+            "tags": "solana, ethereum, metamask, bitcoin, zk proofs, circom, solidity"
           },
           {
             "name": "Misc",
             "type": "html",
             "htmlPath": "./Docs/Bookmarks/rest/prog.html",
             "content": "",
+            "caption": "Miscellaneous resources",
             "thumbnail": "./images/default.jpg",
-            "caption": ""
+            "tags": "machine leaerning, quantum computing"
           }
         ]
       }

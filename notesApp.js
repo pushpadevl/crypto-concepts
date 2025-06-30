@@ -56,8 +56,7 @@ function notesApp() {
           for (const [subIndex, subtopic] of topic.subtopics.entries()) {
             for (const file of subtopic.files) {
               if (
-                file.name.toLowerCase().includes(q) ||
-                (file.caption && file.caption.toLowerCase().includes(q))
+                file.name.toLowerCase().includes(q) || file.tags.toLowerCase().includes(q)
               ) {
                 this.searchResults.push({
                   topicKey,
