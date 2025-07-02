@@ -71,6 +71,33 @@
         ]
       },
       {
+        "name": "Groth16",
+        "files":[
+          {
+            "name": "R1CS to QAP",
+            "type": "file",
+            "path": "./Docs/ZKP/Groth/qap.pdf",
+            "thumbnail": "./images/qap.png",
+            "caption": "Converting R1CS to QAP",
+            "tags": "Groth16, Lagrange basis, Rank-1 constraint systems, quadratic arithmetic programs"
+          }
+        ]
+      },
+      {
+        "name": "Commitments",
+        "files":[
+          {
+            "name": "Small note on basic commitment schemes",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/comm.pdf",
+            "thumbnail": "./images/default.png",
+            "caption": "Basic commitment schemes based on DLog",
+            "tags": "discrete log, binding, hiding, reveal, commit, schnorr, pedersen, okamoto, hash"
+          }
+        ]
+      },
+      
+      {
         "name": "Elliptic_curves",
         "files": [
           {
@@ -172,6 +199,19 @@
             "thumbnail": "./images/otr.png",
             "caption": "Oblivious transfer protocol by Micali and Bellare.",
             "tags": "Oblivious transfer, Micali, Bellare, Hash, Encryption, Discrete Logarithm, classical cryptography"
+          }
+        ]
+      },
+      {
+        "name": "Proof of Knowledge",
+        "files": [
+          {
+            "name": "Schnorr's Proof of Knowledge",
+            "type": "file",
+            "path": "./Docs/Classical/Sigma_protocols/schnorr.pdf",
+            "thumbnail": "./images/schnorr.png",
+            "caption": "Schnorr's Proof of Knowledge protocol.",
+            "tags": "Knowledge extractor, extractibility, soundness, Discrete Logarithm, classical cryptography"
           }
         ]
       },
