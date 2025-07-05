@@ -46,6 +46,14 @@
             "thumbnail": "./images/plonkgpp.png",
             "caption": "Used in PLONK to verify that a permutation is valid",
             "tags": "Permutation check"
+          },
+          {
+            "name":"KZG PCS",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/kzg.pdf",
+            "thumbnail": "./images/kzg.png",
+            "caption": "KZG Polynomial Commitment Scheme",
+            "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, PLONK, polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
           }
         ]
       },
@@ -80,6 +88,14 @@
             "thumbnail": "./images/qap.png",
             "caption": "Converting R1CS to QAP",
             "tags": "Groth16, Lagrange basis, Rank-1 constraint systems, quadratic arithmetic programs"
+          },
+          {
+            "name":"KZG PCS",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/kzg.pdf",
+            "thumbnail": "./images/kzg.png",
+            "caption": "KZG Polynomial Commitment Scheme",
+            "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, PLONK, Groth polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
           }
         ]
       },
@@ -90,9 +106,17 @@
             "name": "Small note on basic commitment schemes",
             "type": "file",
             "path": "./Docs/ZKP/Commitments/comm.pdf",
-            "thumbnail": "./images/default.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Basic commitment schemes based on DLog",
             "tags": "discrete log, binding, hiding, reveal, commit, schnorr, pedersen, okamoto, hash"
+          },
+          {
+            "name":"KZG PCS",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/kzg.pdf",
+            "thumbnail": "./images/kzg.png",
+            "caption": "KZG Polynomial Commitment Scheme",
+            "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
           }
         ]
       },

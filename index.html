@@ -74,7 +74,7 @@
     <header class="text-gray-500 text-center px-4 py-3 flex justify-between items-center w-full">
       <div class="text-xl font-bold"></div>
       <div class="flex items-center space-x-4 text-sm">
-        <a href="mailto:isi.pushp@gmail.com"  class="hover:underline">&#x2197 Email</a>
+        <a href="mailto:pushpa.dev@outlook.com"  class="hover:underline">&#x2197 Email</a>
         <a href="https://www.github.com/pushpadevl" target="_blank" class="hover:underline ">&#x2197 GitHub</a>
         <a href="https://www.linkedin.com/in/pushpendra-pal-14ab21186/" target="_blank" class="hover:underline ">&#x2197 LinkedIn</a>
         <input
@@ -116,7 +116,7 @@
           <div class="flex-1">
             <div class="flex justify-between items-center mb-4">
               <h2 class="text-xl font-semibold text-gray-700" x-text="activeFile.name"></h2>
-              <button class="text-sm text-blue-600 hover:underline" @click="activeFile = null; showFileList = false">← Back to Subtopics</button>
+              <button class="text-sm text-gray-600 hover:underline" @click="activeFile = null; showFileList = false">← Back to Subtopics</button>
             </div>
             <div>
             <template x-if="activeFile.type === 'file'">
@@ -130,15 +130,15 @@
           </div>
 
           <div
-            class="w-64 bg-orange-100 rounded-lg p-4"
+            class="w-64 bg-white-100 rounded-lg p-4"
             x-show="showSidebar"
             x-transition
           >
-            <h3 class="text-lg font-semibold mb-2">All Files</h3>
+            <h3 class="text-lg text-gray-700 font-semibold mb-2">Related topics</h3>
             <ul class="list-disc list-inside space-y-1">
               <template x-for="(file, idx) in topics[selectedTopic].subtopics[selectedSubtopic].files" :key="idx">
                 <li>
-                  <button class="text-left text-indigo-700 hover:underline" @click="activeFile = file" x-text="file.name"></button>
+                  <button class="text-left text-gray-500 hover:underline" @click="activeFile = file" x-text="file.name"></button>
                 </li>
               </template>
             </ul>
@@ -146,10 +146,10 @@
 
           <!-- Toggle sub subtopic sidebar visibility-->
           <button
-              class="fixed top-1/3 right-1 -translate-t-1/2 bg-orange-400 text-white px-1/2 py-10 rounded shadow "
+              class="fixed top-1/3 right-1 -translate-t-1/2 bg-white text-lg text-gray-500 px-1 py-5 rounded shadow "
               @click="showSidebar = !showSidebar"
             >
-              {}
+              //
             </button>
 
         </div>
