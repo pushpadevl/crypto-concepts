@@ -278,10 +278,18 @@
           {
             "name": "Primality testing",
             "type": "file",
-            "path": "./Docs/Number_Theory/Primality_tests/AKS_primality_v6.pdf",
+            "path": "./Docs/Number_Theory/Primes/AKS_primality_v6.pdf",
             "thumbnail": "./images/prime.png",
             "caption": "Deterministic factoring using AKS primality testing algorithm",
             "tags": "AKS primaility testing, prime numbers, deterministic primality tests"
+          },
+          {
+            "name": "Tonelli Shanks Algorithm",
+            "type": "file",
+            "path": "./Docs/Number_Theory/Primes/tonqr.pdf",
+            "thumbnail": "./images/prime.png",
+            "caption": "Finding roots of a QR mod prime",
+            "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
           }
         ]
       }
