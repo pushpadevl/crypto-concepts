@@ -1,25 +1,51 @@
 {
-  "math": {
-    "name": "Number theory",
+  "clcry": {
+    "name": "Classical Crypto",
     "subtopics": [
       {
-        "name": "Group Theory",
+        "name": "Oblivious Transfer",
         "files": [
           {
-            "name": "Stanford GT notes",
+            "name": "Micali & Bellare OT",
             "type": "file",
-            "path": "./Docs/Number_Theory/Stanford_GT/Stanford_GT_NOTES.pdf",
-            "thumbnail": "./images/qr.png",
-            "caption": "Group theory notes",
-            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
+            "path": "./Docs/Classical/OT/micali_bellare.pdf",
+            "thumbnail": "./images/otr.png",
+            "caption": "Oblivious transfer protocol by Micali and Bellare.",
+            "tags": "Oblivious transfer, Micali, Bellare, Hash, Encryption, Discrete Logarithm, classical cryptography"
+          }
+        ]
+      },
+      {
+        "name": "Proof of Knowledge",
+        "files": [
+          {
+            "name": "Schnorr's Proof of Knowledge",
+            "type": "file",
+            "path": "./Docs/Classical/Sigma_protocols/schnorr.pdf",
+            "thumbnail": "./images/schnorr.png",
+            "caption": "Schnorr's Proof of Knowledge protocol.",
+            "tags": "Knowledge extractor, extractibility, soundness, Discrete Logarithm, classical cryptography"
+          }
+        ]
+      },
+      {
+        "name": "Fujisaki Okamoto",
+        "files": [
+          {
+            "name": "Fujisaki Okamoto transform",
+            "type": "file",
+            "path": "./Docs/Classical/Fujisaki_transform/fjok.pdf",
+            "thumbnail": "./images/fjok.png",
+            "caption": "Convert a CPA secure encryption scheme to a CCA secure one.",
+            "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
           },
           {
-            "name": "Primality testing",
+            "name": "Fujisaki Okamoto on El-Gamal",
             "type": "file",
-            "path": "./Docs/Number_Theory/Primality_tests/AKS_primality_v6.pdf",
-            "thumbnail": "./images/prime.png",
-            "caption": "Deterministic factoring using AKS primality testing algorithm",
-            "tags": "AKS primaility testing, prime numbers, deterministic primality tests"
+            "path": "./Docs/Classical/Fujisaki_transform/example_claude.pdf",
+            "thumbnail": "./images/fjokeg.png",
+            "caption": "Example of Fujisaki Okamoto transform",
+            "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
           }
         ]
       }
@@ -46,27 +72,43 @@
             "thumbnail": "./images/plonkgpp.png",
             "caption": "Used in PLONK to verify that a permutation is valid",
             "tags": "Permutation check"
+          },
+          {
+            "name":"KZG PCS",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/kzg.pdf",
+            "thumbnail": "./images/kzg.png",
+            "caption": "KZG Polynomial Commitment Scheme",
+            "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, PLONK, polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
           }
         ]
       },
       {
-        "name": "GKR IP",
+        "name": "Interactive Proofs",
         "files": [
           {
             "name": "GKR Notes",
             "type": "file",
-            "path": "./Docs/ZKP/GKR/GKR.pdf",
+            "path": "./Docs/ZKP/IP/GKR.pdf",
             "thumbnail": "./images/gkr.png",
             "caption": "GKR Interactive Proof protocols",
-            "tags": "GKR Interactive Proof protocol, Multi-linear Extensions, Lagrange basis"
+            "tags": "GKR Interactive Proof protocol, Multi-linear Extensions, Lagrange basis, sum check, polynomial evaluation, interactive proofs"
           },
           {
             "name": "Reduction",
             "type": "file",
-            "path": "./Docs/ZKP/GKR/Multiple_poly_eval_reduction.pdf",
+            "path": "./Docs/ZKP/IP/Multiple_poly_eval_reduction.pdf",
             "thumbnail": "./images/reduc.png",
             "caption": "Reduction of multiple polynomial evaluation verification to one",
             "tags": "Reduction of multiple polynomial evaluation verification to one, GKR, Sum check, Multi-linear extensions"
+          },
+          {
+            "name":"Sum check",
+            "type": "file",
+            "path": "./Docs/ZKP/IP/sumchk.pdf",
+            "thumbnail": "./images/sumchk.png",
+            "caption": "Sum check protocol, a subroutine of GKR",
+            "tags": "Sum check protocol, GKR, Interactive Proofs, Sum check protocol, polynomial evaluation, multi-linear extensions"
           }
         ]
       },
@@ -80,6 +122,30 @@
             "thumbnail": "./images/qap.png",
             "caption": "Converting R1CS to QAP",
             "tags": "Groth16, Lagrange basis, Rank-1 constraint systems, quadratic arithmetic programs"
+          },
+          {
+            "name":"KZG PCS",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/kzg.pdf",
+            "thumbnail": "./images/kzg.png",
+            "caption": "KZG Polynomial Commitment Scheme",
+            "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, PLONK, Groth polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
+          },
+          {
+            "name": "FFT in Groth16",
+            "type": "file",
+            "path": "./Docs/ZKP/Groth/fftgroth.pdf",
+            "thumbnail": "./images/fftgroth.png",
+            "caption": "FFT to switch between coefficient form and evaluation form in Groth16",
+            "tags": "Fast Fourier Transform, Groth16, polynomial evaluation, polynomial commitment, zero knowledge proof, zkSNARK, polynomial multiplication"
+          },
+          {
+            "name": "FFT detailed",
+            "type": "file",
+            "path": "./Docs/Miscellaneous/Quantum_crypto/fft.pdf"
+            ,"thumbnail": "./images/fftimg.png",
+            "caption": "Fast Fourier Transform derivation and explanation",
+            "tags": "Fast Fourier Transform, polynomial multiplication, polynomial evaluation, quantum cryptography, SNARK, zero knowledge proof"
           }
         ]
       },
@@ -90,9 +156,17 @@
             "name": "Small note on basic commitment schemes",
             "type": "file",
             "path": "./Docs/ZKP/Commitments/comm.pdf",
-            "thumbnail": "./images/default.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Basic commitment schemes based on DLog",
             "tags": "discrete log, binding, hiding, reveal, commit, schnorr, pedersen, okamoto, hash"
+          },
+          {
+            "name":"KZG PCS",
+            "type": "file",
+            "path": "./Docs/ZKP/Commitments/kzg.pdf",
+            "thumbnail": "./images/kzg.png",
+            "caption": "KZG Polynomial Commitment Scheme",
+            "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
           }
         ]
       },
@@ -186,53 +260,36 @@
       }
     ]
   },
-  "clcry": {
-    "name": "Classical Crypto",
+  
+  "math": {
+    "name": "Number theory",
     "subtopics": [
       {
-        "name": "Oblivious Transfer",
+        "name": "Group Theory",
         "files": [
           {
-            "name": "Micali & Bellare OT",
+            "name": "Stanford GT notes",
             "type": "file",
-            "path": "./Docs/Classical/OT/micali_bellare.pdf",
-            "thumbnail": "./images/otr.png",
-            "caption": "Oblivious transfer protocol by Micali and Bellare.",
-            "tags": "Oblivious transfer, Micali, Bellare, Hash, Encryption, Discrete Logarithm, classical cryptography"
-          }
-        ]
-      },
-      {
-        "name": "Proof of Knowledge",
-        "files": [
-          {
-            "name": "Schnorr's Proof of Knowledge",
-            "type": "file",
-            "path": "./Docs/Classical/Sigma_protocols/schnorr.pdf",
-            "thumbnail": "./images/schnorr.png",
-            "caption": "Schnorr's Proof of Knowledge protocol.",
-            "tags": "Knowledge extractor, extractibility, soundness, Discrete Logarithm, classical cryptography"
-          }
-        ]
-      },
-      {
-        "name": "Fujisaki Okamoto",
-        "files": [
-          {
-            "name": "Fujisaki Okamoto transform",
-            "type": "file",
-            "path": "./Docs/Classical/Fujisaki_transform/fjok.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Convert a CPA secure encryption scheme to a CCA secure one.",
-            "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
+            "path": "./Docs/Number_Theory/Stanford_GT/Stanford_GT_NOTES.pdf",
+            "thumbnail": "./images/qr.png",
+            "caption": "Group theory notes",
+            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
           },
           {
-            "name": "Fujisaki Okamoto on El-Gamal",
+            "name": "Primality testing",
             "type": "file",
-            "path": "./Docs/Classical/Fujisaki_transform/example_claude.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Example of Fujisaki Okamoto transform",
-            "tags": "Fujisaki Okamoto transform, Chosen Plaintext Attack, Chosen Ciphertext Attack, Elgamal, Encryption, Decryption, Classical cryptography, CPA, CCA"
+            "path": "./Docs/Number_Theory/Primes/AKS_primality_v6.pdf",
+            "thumbnail": "./images/prime.png",
+            "caption": "Deterministic factoring using AKS primality testing algorithm",
+            "tags": "AKS primaility testing, prime numbers, deterministic primality tests"
+          },
+          {
+            "name": "Tonelli Shanks Algorithm",
+            "type": "file",
+            "path": "./Docs/Number_Theory/Primes/tonqr.pdf",
+            "thumbnail": "./images/prime.png",
+            "caption": "Finding roots of a QR mod prime",
+            "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
           }
         ]
       }
