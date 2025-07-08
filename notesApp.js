@@ -28,7 +28,7 @@ function notesApp() {
     toggleDropdown(topicKey){
       this.openDropdown[topicKey] = !this.openDropdown[topicKey];
       this.selectedTopic = topicKey;
-      this.selectedSubtopic = 0;
+      this.selectedSubtopic = null; // Reset subtopic selection
       this.activeFile = null;
     },
     selectFile(file) {
