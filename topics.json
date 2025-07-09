@@ -238,7 +238,7 @@
         "name": "Study material",
         "files": [
           {
-            "name": "ProofsArgs&ZK",
+            "name": "Proofs, Arguments & Zero Knowledge",
             "type": "file",
             "path": "./Docs/ZKP/StuMat/ProofsArgsAndZK.pdf",
             "thumbnail": "./images/pazk.png",
