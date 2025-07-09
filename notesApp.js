@@ -15,6 +15,7 @@ function notesApp() {
     previousSubtopic: null,
 
     async init() {
+      
       const res = await fetch('topics.json');
       this.topics = await res.json();
     },
@@ -74,9 +75,8 @@ function notesApp() {
         // Restore previously selected topic/subtopic
         this.selectedTopic = this.previousTopic;
         this.selectedSubtopic = this.previousSubtopic;
-      }
-
-      
-    }
+      } 
+    },
+    
   };
 }
