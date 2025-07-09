@@ -15,6 +15,7 @@ function notesApp() {
     previousSubtopic: null,
 
     async init() {
+      
       const res = await fetch('topics.json');
       this.topics = await res.json();
     },
@@ -28,7 +29,7 @@ function notesApp() {
     toggleDropdown(topicKey){
       this.openDropdown[topicKey] = !this.openDropdown[topicKey];
       this.selectedTopic = topicKey;
-      this.selectedSubtopic = 0;
+      this.selectedSubtopic = null; // Reset subtopic selection
       this.activeFile = null;
     },
     selectFile(file) {
@@ -74,9 +75,8 @@ function notesApp() {
         // Restore previously selected topic/subtopic
         this.selectedTopic = this.previousTopic;
         this.selectedSubtopic = this.previousSubtopic;
-      }
-
-      
-    }
+      } 
+    },
+    
   };
 }
