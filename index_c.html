@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Sunburst Chart</title>
+  <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom right, #452531 0%, #090a0f 40%);
+  overflow: hidden;
+  font-family: sans-serif;
+  color: #fff;
+}
+/* Bright stars - larger, twinkling */
+.bright-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(4px 3px at 15% 25%, #fff 40%, transparent 50%),
+    radial-gradient(5px 3px at 85% 15%, #e6f3ff 40%, transparent 50%),
+    radial-gradient(3px 4px at 35% 75%, #fff 30%, transparent 40%),
+    radial-gradient(3px 2px at 75% 85%, #ffe6e6 40%, transparent 50%),
+    radial-gradient(4px 4px at 55% 35%, #fff 35%, transparent 45%);
+  background-size: 400px 600px;
+  z-index: 3;
+  animation: twinkle 8s ease-in-out infinite alternate;
+}
+/* Star field layers */
+.starfield, .starfield2, .starfield3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  z-index: -1;
+  opacity: 0.8;
+  animation: moveStars 60s linear infinite;
+}
+
+/* Star pattern using radial gradients */
+.starfield {
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, #ff6b6b 50%, transparent 51%),
+    radial-gradient(2px 2px at 30% 80%, #ff6b6b 50%, transparent 51%),
+    radial-gradient(2px 2px at 70% 50%, #ff6b6b 50%, transparent 51%),
+    radial-gradient(2px 2px at 90% 10%, #ff6b6b 50%, transparent 51%),
+    radial-gradient(2px 2px at 40% 40%, #ff6b6b 50%, transparent 51%),
+    radial-gradient(2px 2px at 80% 90%, #ff6b6b 50%, transparent 51%);
+   background-size: 400px 400px;
+  z-index: 4;
+  opacity: 0.9;
+  animation: moveStars 120s linear infinite;
+}
+
+.starfield2 {
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 60%, white 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 60% 10%, white 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 85% 75%, white 50%, transparent 50%);
+  background-size: 150px 150px;
+  z-index: 5;
+  opacity: 0.7;
+  animation: moveStars 80s linear infinite;
+}
+
+.starfield3 {
+  background-image:
+    radial-gradient(1px 1px at 35% 85%, rgb(93, 255, 101) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 75% 25%, rgb(241, 122, 226) 50%, transparent 50%);
+  background-size: 100px 100px;
+  z-index: 6;
+  opacity: 0.5;
+  animation: moveStars 60s linear infinite;
+}
+
+/* Shooting star animation */
+.shooting-star {
+  position:relative;
+  top: 20%;
+  left: 100%;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 7;
+  animation: shootingStar 10s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+.shooting-star:nth-child(2) {
+  top: 40%;
+  animation-delay: 15s;
+  animation-duration: 4s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 60%;
+  animation-delay: 30s;
+  animation-duration: 2.5s;
+}
+
+/* Animation for slow drifting stars */
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px -600px;
+  }
+}
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-500px) translateY(600px);
+    opacity: 0;
+  }
+}
+
+
+    svg {
+      display:block;
+      margin: auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+    }
+
+    .arc path {
+      stroke: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
+      transition: all 0.2s ease;
+      
+    }
+
+    .arc path:hover {
+      filter:
+        drop-shadow(0 0 5px #00ffffaa)
+        drop-shadow(0 0 15px #00ffff33);
+      transform: scale(1.02);
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0, 20, 30, 0.9);
+      color: #b8f6ff;
+      padding: 6px 12px;
+      border-radius: 5px;
+      border: 1px solid #00ffff55;
+      font-size: 14px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-family: monospace;
+      z-index:20;
+    }
+  </style>
+</head>
+<body>
+  <div class="bright-stars"></div>
+  <div class="starfield"></div>
+  <div class="starfield2"></div>
+  <div class="starfield3"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+<svg width="900" height="900"></svg>
+<div class="tooltip"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+  const width = 1000;
+  const radius = width/2 ;
+  const svg = d3.select("svg").attr("viewBox", [0, 0, width, width]);
+  const tooltip = d3.select(".tooltip");
+
+  function toHierarchy(json) {
+    return {
+      name: "Root",
+      children: Object.values(json).map(topic => ({
+        name: topic.name,
+        children: topic.subtopics.map(sub => ({
+          name: sub.name,
+          children: sub.files.map(file => ({
+            name: file.name,
+            link: file.path
+          }))
+        }))
+      }))
+    };
+  }
+
+  // Sample data for demonstration
+  const sampleData = {
+    "1": {
+      "name": "Web Development",
+      "subtopics": [
+        {
+          "name": "Frontend",
+          "files": [
+            {"name": "HTML Guide", "path": "#html"},
+            {"name": "CSS Tips", "path": "#css"},
+            {"name": "JavaScript", "path": "#js"}
+          ]
+        },
+        {
+          "name": "Backend",
+          "files": [
+            {"name": "Node.js", "path": "#node"},
+            {"name": "Python", "path": "#python"}
+          ]
+        }
+      ]
+    },
+    "2": {
+      "name": "Data Science",
+      "subtopics": [
+        {
+          "name": "Analysis",
+          "files": [
+            {"name": "Statistics", "path": "#stats"},
+            {"name": "Visualization", "path": "#viz"}
+          ]
+        },
+        {
+          "name": "Machine Learning",
+          "files": [
+            {"name": "Algorithms", "path": "#ml"},
+            {"name": "Neural Networks", "path": "#nn"}
+          ]
+        }
+      ]
+    },
+    "3": {
+      "name": "Mobile Development",
+      "subtopics": [
+        {
+          "name": "iOS",
+          "files": [
+            {"name": "Swift", "path": "#swift"},
+            {"name": "UIKit", "path": "#uikit"}
+          ]
+        }
+      ]
+    }
+  };
+
+  fetch('data.json')
+    .then(res => res.json())
+    .catch(() => sampleData)
+    .then(json => {
+      const data = toHierarchy(json);
+      const root = d3.hierarchy(data)
+        .sum(d => d.children ? 0 : 1)
+        .sort((a, b) => b.value - a.value);
+
+      d3.partition().size([2 * Math.PI, radius])(root);
+
+      const arc = d3.arc()
+        .startAngle(d => d.x0)
+        .endAngle(d => d.x1)
+        .innerRadius(d => d.y0)
+        .outerRadius(d => d.y1);
+
+      // Depth aware coloring of pie chart layers
+      const color = d => {
+        if (d.depth === 1) return "#4a9a8a10"; // Topics - Deep teal
+        if (d.depth === 2) return "#6ba09a09"; // Subtopics - Muted teal-green
+        if (d.depth === 3) return "#8bc3b802"; // Files - Soft seafoam teal
+        return "#555dd"; // Fallbacks
+      };
+      
+      const g = svg.append("g")
+        .attr("transform", `translate(${radius},${radius})`)
+        .attr("class", "arc");
+
+      const path = g.selectAll("path")
+        .data(root.descendants())
+        .join("path")
+        .attr("display", d => d.depth ? null : "none")
+        .attr("d", arc)
+        .attr("fill", d => color(d))
+        .on("click", (event, p) => {
+          if (!p.children) {
+            if (p.data.link) window.open(p.data.link, "_blank");
+            return;
+          }
+          root.each(d => {
+            d.target = {
+              x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+              x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+              y0: Math.max(0, d.y0 - p.y0),
+              y1: Math.max(0, d.y1 - p.y0)
+            };
+          });
+
+          const t = g.transition().duration(750);
+          path.transition(t)
+            .attrTween("d", d => () => arc(d.target))
+            .attr("display", d => d.target.y1 <= radius ? null : "none");
+          text.transition(t)
+            .attr("transform", d => {
+              const angle = (d.target.x0 + d.target.x1) / 2;
+              const radius = (d.target.y0 + d.target.y1) / 2;
+              const x = Math.cos(angle - Math.PI / 2) * radius;
+              const y = Math.sin(angle - Math.PI / 2) * radius;
+              const rotation = (angle * 180 / Math.PI) - 90;
+              const adjustedRotation = rotation > 90 ? rotation - 180 : rotation;
+              return `translate(${x},${y}) rotate(${adjustedRotation})`;
+            })
+            .attr("display", d => d.target.y1 <= radius ? null : "none");
+        })
+        .on("mouseover", (event, d) => {
+          const sequence = d.ancestors().reverse();
+          path.attr("opacity", node => sequence.includes(node) ? 1 : 0.2);
+          tooltip
+            .style("opacity", 0)
+            .html(sequence.map(n => n.data.name).join(" → "))
+            .style("left", (event.pageX + 10) + "px")
+            .style("top", (event.pageY + 10) + "px");
+        })
+        .on("mouseout", () => {
+          path.attr("fill-opacity",1);
+          tooltip.style("opacity", 0);
+        });
+
+      // Add text labels - MOVED INSIDE THE FETCH PROMISE
+      const text = g.selectAll("text")
+        .data(root.descendants())
+        .join("text")
+        .attr("display", d => d.depth ? null : "none") // Show for all depths except root
+        .attr("transform", d => {
+          const angle = (d.x0 + d.x1) / 2;
+          const radius = (d.y0 + d.y1) / 2;
+          const x = Math.cos(angle - Math.PI / 2) * radius;
+          const y = Math.sin(angle - Math.PI / 2) * radius;
+          const rotation = (angle * 180 / Math.PI) - 90;
+          
+          // Adjust rotation to keep text readable (not upside down)
+          const adjustedRotation = rotation > 90 ? rotation - 180 : rotation;
+          
+          return `translate(${x},${y}) rotate(${adjustedRotation})`;
+        })
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "middle")
+        .attr("font-size", d => d.depth === 1 ? "14px" : d.depth === 2 ? "11px" : "9px")
+        .attr("fill", "white")
+        .attr("font-weight", "bold")
+        .text(d => d.data.name);
+    });
+</script>

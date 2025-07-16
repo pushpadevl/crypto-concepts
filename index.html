@@ -1,218 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Fletore</title>
-  <script> 
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {},
-      },
-      plugins: [tailwind.typography]
-    }
-  </script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script src="./notesApp.js"></script>
-  <style>
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #bbb;
-      border-radius: 6px;
-    }
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Sunburst Chart</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <div class="bright-stars"></div>
+  <div class="starfield"></div>
+  <div class="starfield2"></div>
+  <div class="starfield3"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
 
-<body class="bg-white-100 font-sans min-h-screen dark:bg-slate-900 dark:text-white" x-data="notesApp()" x-init="
-       window.addEventListener('resize', () => {
-         showSidebar = window.innerWidth >= 1024;
-       });
-       init();
-     ">
+<svg width="900" height="900"></svg>
+<div class="tooltip"></div>
 
-<!--Main body area with sidebar and content-->
-<div class="flex min-h-screen ">
-
-  <!-- Combined Sidebar -->
-  <div class="bg-slate-900 text-white text-left w-64 p-5 shadow-xl overflow-y-auto flex flex-col h-screen">
-    <button @click="selectedTopic = null; selectedSubtopic = null; activeFile = null"
-                  class="text-2xl font-bold mb-4 focus:outline-none transition-all hover:bg-opacity-10 duration-300 ease-in-out whitespace-nowrap">
-            🏠 Home
-            </button>
-    <ul class="space-y-2">
-      <template x-for="[topicKey, topicValue] in Object.entries(topics)" :key="topicKey">
-        <li>
-          <!-- Topic Button -->
-          <div>
-            <button @click="toggleDropdown(topicKey)"
-                    class="w-full text-left px-3 py-2 font-medium underline hover:bg-slate-700 rounded transition-all duration-300 ease-in-out"
-                    :class="selectedTopic === topicKey ? 'bg-slate-800' : ''">
-              <span x-text="topicValue.name"></span>
-            </button>
-          </div>
-
-          <!-- Subtopics Dropdown -->
-          <ul x-show="openDropdown[topicKey]" x-transition class="ml-4 mt-1 space-y-1 transition-all duration-300 ease-in-out">
-            <template x-for="(subtopic, index) in topicValue.subtopics" :key="index">
-              <li><button @click="selectTopicAndSubtopic(topicKey, index)"
-                        class="w-full text-left px-3 py-2 text-sm hover:bg-slate-700 bg-slate-900 rounded"
-                        
-                        :class="selectedTopic === topicKey && selectedSubtopic === index ? 'bg-slate-800' : ''">
-                  ⤷ <span x-text="subtopic.name"></span>
-                </button>
-              </li>
-            </template>
-          </ul>
-        </li>
-      </template>
-    </ul>
-  </div>
-
-<!-- Main Content Area -->
-  <div class="flex flex-col flex-1 p-3 overflow-y-auto h-screen">
-      <!-- Header Bar -->
-    <header class="text-gray-500 text-center  px-4 py-3 flex justify-between items-center w-full">
-      <div class="text-xl font-bold"></div>
-      <div class="flex items-center space-x-4 text-sm">
-        <a href="mailto:pushpa.dev@outlook.com"  class="hover:underline">&#x2197 Email</a>
-        <a href="https://www.github.com/pushpadevl" target="_blank" class="hover:underline ">&#x2197 GitHub</a>
-        <a href="https://www.linkedin.com/in/pushpendra-pal-14ab21186/" target="_blank" class="hover:underline ">&#x2197 LinkedIn</a>
-        <input
-          x-model="searchQuery"
-          @input="searchFiles"
-          type="text"
-          placeholder="&#x1f50e search notes..."
-          class="px-2 py-1 rounded text-black"
-        />
-      </div>
-    </header>
-    <div class="flex-1">
-      <template x-if="!isSearching && !selectedTopic">
-        <div class="text-gray-700 ml-0">
-          <iframe src="https://pushpadevl.github.io" class="w-full h-[100vh] backdrop-blur-sm"></iframe>
-        </div>
-      </template>
-
-      <template x-if="!isSearching && selectedTopic && selectedSubtopic !== null && !activeFile">
-        <div>
-          <h2 class="text-2xl font-bold mb-4" x-text="topics[selectedTopic].subtopics[selectedSubtopic].name + ' →'"></h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <template x-for="(file, idx) in topics[selectedTopic].subtopics[selectedSubtopic].files" :key="idx">
-              <div class=" h-60 bg-white rounded-lg  shadow-xl hover:shadow-2xl overflow-hidden  transition relative group cursor-pointer"
-                  @click="selectFile(file); showFileList = true">
-
-                <img :src="file.thumbnail" alt="Thumbnail" class="w-full h-50 object-cover" />
-                <div class="absolute bottom-0 left-0 right-0 p-3 bg-teal-900 text-white text-center text-lg" x-text="file.name"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm p-4 text-center" x-text="file.caption"></div>
-              </div>
-            </template>
-          </div>
-        </div>
-      </template>
-      
-      <template x-if="!isSearching && selectedTopic && selectedSubtopic === null && !activeFile">
-        <div>
-          <h2 class="text-2xl font-bold mb-4" x-text="topics[selectedTopic].name + ' →'"></h2> <!-- Topic name display-->
-          <template x-for="subtopic in topics[selectedTopic].subtopics"> <!-- List of subtopics-->
-            <div>
-              <hr class="border-1 border-teal-500 my-2"><br>
-              <h3 class="text-lg font-semibold underline" x-text="subtopic.name"></h3>
-              <br>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-4">
-                <template x-for="file in subtopic.files" >
-                  <div class="h-60 bg-white rounded-lg shadow-xl hover:shadow-2xl overflow-hidden  transition relative group cursor-pointer"
-                      @click="selectFile(file); showFileList = true">
-
-                    <img :src="file.thumbnail" alt="Thumbnail" class="w-full h-50 object-cover" />
-                    <div class="absolute bottom-0 left-0 right-0 p-3 bg-teal-900 text-white text-center text-lg" x-text="file.name"></div>
-                    <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm p-4 text-center" x-text="file.caption"></div>
-                  </div>
-                </template>
-              </div>
-            </div>
-            <!--<h3 class="text-lg font-semibold mb-2" x-text="subtopic.name"></h3>
-          Cannot have multiple siblings of template x-for, only one root element is allowed per template loop-->
-            <template x-for="file in subtopic.files" :key="file.name">
-              <span x-text="file.name"> </span>
-               
-              </template>
-            </template>
-        </div>
-      </template>
-      <template x-if="!isSearching && activeFile">
-        <div class="flex gap-4">
-          <!-- File Viewer -->
-          <div class="flex-1">
-            <div class="flex justify-between items-center mb-4">
-              <h2 class="text-xl font-semibold text-gray-500" x-text="activeFile.name"></h2>
-              <button class="text-sm text-gray-500 hover:underline" @click="activeFile = null; showFileList = false">← Back to Subtopics</button>
-            </div>
-            <div>
-            <template x-if="activeFile.type === 'file'">
-              <iframe :src="activeFile.path" class="w-full h-[80vh] border rounded-lg shadow-lg bg-white"></iframe>
-            </template>
-            <template x-if="activeFile.type === 'html'">
-              <div class="prose max-w-full bg-white p-6 rounded-lg shadow" x-html="activeFile.content"></div>
-            </template>
-          </div>
-
-          </div>
-
-          <div
-            class="w-64 bg-white-100 rounded-lg p-4"
-            x-show="showSidebar"
-            x-transition
-          >
-            <h3 class="text-lg text-gray-500 font-semibold mb-2">Related topics</h3>
-            <ul class="list-disc list-inside space-y-1">
-              <template x-for="(file, idx) in topics[selectedTopic].subtopics[selectedSubtopic].files" :key="idx">
-                <li>
-                  <button class="text-left text-gray-500 hover:underline" @click="activeFile = file" x-text="file.name"></button>
-                </li>
-              </template>
-            </ul>
-          </div>
-
-          <!-- Toggle sub subtopic sidebar visibility-->
-          <button
-              class="fixed top-1/3 right-1 -translate-t-1/2 bg-white text-lg text-gray-500 px-1 py-5 rounded shadow "
-              @click="showSidebar = !showSidebar"
-            >
-              //
-            </button>
-
-        </div>
-      </template>
-      <!-- Search Results -->
-
-      <template x-if="isSearching && searchResults.length > 0">
-        <div>
-          <h2 class="text-2xl font-bold mb-4">Search Results</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <template x-for="(result, index) in searchResults" :key="index">
-              <div class="h-60 bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition relative group cursor-pointer"
-                  @click="selectedTopic = result.topicKey; selectedSubtopic = result.subIndex; activeFile = result.file; isSearching = false">
-                <img :src="result.file.thumbnail" alt="Thumbnail" class="w-full h-50 object-cover" />
-                <div class="absolute bottom-0 left-0 right-0 p-3 bg-teal-900 text-white text-center text-lg" x-text="result.file.name"></div>
-                <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm p-4 text-center" x-text="result.file.caption"></div>
-              </div>
-            </template>
-          </div>
-        </div>
-      </template>
-      <!-- No Results -->
-      <template x-if="isSearching && searchResults.length === 0">
-        <div class="text-gray-500 text-lg">No results found for "<span x-text="searchQuery"></span>"</div>
-      </template>
-
-    </div>
-    <footer class="text-gray-500 text-center text-sm py-1">
-        © 2025 <a href="https://www.github.com/pushpadevl" target="_blank" hover="underline">pushpadevl.</a> ✏️ with ♥ for cryptographers.
-    </footer>
-    </div>
-</div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="./circ.js"></script>
 </body>
 </html>
