@@ -109,6 +109,22 @@
             "thumbnail": "./images/kzg.png",
             "caption": "KZG Polynomial Commitment Scheme",
             "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, PLONK, polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
+          },
+          {
+            "name":"Polynomials in PLONK",
+            "type":"file",
+            "path":"./Docs/ZKP/PLONK/plonk_exam_perx.pdf",
+            "thumbnail":"./images/perx_plonk_poly.png",
+            "caption":"Polynomials derivation from circuit in PLONK",
+            "tags":"KZG Polynomial Commitment Scheme, Copy constraints, roots of unity, zk, zero knowledge, snark, proof, lagrange interpolation"
+          },
+          {
+            "name":"Towards quotient polynomial",
+            "type":"file",
+            "path":"./Docs/ZKP/PLONK/perx_quotient.pdf",
+            "thumbnail":"./images/perx_quotient.png",
+            "caption":"How are permuatation polys and selector and witness polys used to make the quotient polys",
+            "tags":"KZG Polynomial Commitment Scheme, Copy constraints, roots of unity, zk, zero knowledge, snark, proof, lagrange interpolation, homomorphism"
           }
         ]
       },
@@ -533,6 +549,26 @@
             "thumbnail": "./images/cn.png",
             "caption": "Computer Networks notes",
             "tags": "Computer Networks, OSI model, TCP/IP model, Routing protocols, Network security"
+          }
+        ]
+      }
+    ]
+  },
+  "prog":{
+    "name": "Programming",
+    "subtopics": [
+      {
+        "name":"RUST",
+        "files":[
+          {
+            "name": "sr",
+            "type": "html",
+            "htmlPath": "./Docs/Prog/RUST/ss.html",
+            "content":"",
+            "thumbnail": "./images/default.jpg",
+            "caption": "",
+            "tags": ""
+            
           }
         ]
       }
