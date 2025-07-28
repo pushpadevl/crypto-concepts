@@ -99,7 +99,7 @@
       <template x-if="!isSearching && selectedTopic && selectedSubtopic !== null && !activeFile">
         <div>
           <h2 class="text-2xl font-bold mb-4" x-text="topics[selectedTopic].subtopics[selectedSubtopic].name + ' →'"></h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <template x-for="(file, idx) in topics[selectedTopic].subtopics[selectedSubtopic].files" :key="idx">
               <div class=" h-60 bg-white rounded-lg  shadow-xl hover:shadow-2xl overflow-hidden  transition relative group cursor-pointer"
                   @click="selectFile(file); showFileList = true">
@@ -121,12 +121,12 @@
               <hr class="border-1 border-teal-500 my-2"><br>
               <h3 class="text-lg font-semibold underline" x-text="subtopic.name"></h3>
               <br>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-4">
                 <template x-for="file in subtopic.files" >
                   <div class="h-60 bg-white rounded-lg shadow-xl hover:shadow-2xl overflow-hidden  transition relative group cursor-pointer"
                       @click="selectFile(file); showFileList = true">
-
-                    <img :src="file.thumbnail" alt="Thumbnail" class="w-full h-50 object-cover" />
+                      <img :src="file.thumbnail" alt="Thumbnail" class="w-full h-50 object-cover" />
+                      
                     <div class="absolute bottom-0 left-0 right-0 p-3 bg-teal-900 text-white text-center text-lg" x-text="file.name"></div>
                     <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm p-4 text-center" x-text="file.caption"></div>
                   </div>
@@ -155,7 +155,7 @@
               <iframe :src="activeFile.path" class="w-full h-[80vh] border rounded-lg shadow-lg bg-white"></iframe>
             </template>
             <template x-if="activeFile.type === 'html'">
-              <div class="prose max-w-full bg-white p-6 rounded-lg shadow" x-html="activeFile.content"></div>
+              <div class="prose max-w-full bg-white dark:bg-slate-900 p-6 rounded-lg shadow" x-html="activeFile.content"></div>
             </template>
           </div>
 
@@ -191,7 +191,7 @@
       <template x-if="isSearching && searchResults.length > 0">
         <div>
           <h2 class="text-2xl font-bold mb-4">Search Results</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <template x-for="(result, index) in searchResults" :key="index">
               <div class="h-60 bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition relative group cursor-pointer"
                   @click="selectedTopic = result.topicKey; selectedSubtopic = result.subIndex; activeFile = result.file; isSearching = false">

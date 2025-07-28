@@ -109,6 +109,22 @@
             "thumbnail": "./images/kzg.png",
             "caption": "KZG Polynomial Commitment Scheme",
             "tags": "KZG Polynomial Commitment Scheme, bilinear pairings, PLONK, polynomial commitment, polynomial evaluation, zero knowledge proof, zkSNARK"
+          },
+          {
+            "name":"Polynomials in PLONK",
+            "type":"file",
+            "path":"./Docs/ZKP/PLONK/plonk_exam_perx.pdf",
+            "thumbnail":"./images/perx_plonk_poly.png",
+            "caption":"Polynomials derivation from circuit in PLONK",
+            "tags":"KZG Polynomial Commitment Scheme, Copy constraints, roots of unity, zk, zero knowledge, snark, proof, lagrange interpolation"
+          },
+          {
+            "name":"Towards quotient polynomial",
+            "type":"file",
+            "path":"./Docs/ZKP/PLONK/perx_quotient.pdf",
+            "thumbnail":"./images/perx_quotient.png",
+            "caption":"How are permuatation polys and selector and witness polys used to make the quotient polys",
+            "tags":"KZG Polynomial Commitment Scheme, Copy constraints, roots of unity, zk, zero knowledge, snark, proof, lagrange interpolation, homomorphism"
           }
         ]
       },
@@ -295,6 +311,19 @@
             "thumbnail": "./images/prime.png",
             "caption": "Deterministic factoring using AKS primality testing algorithm",
             "tags": "AKS primaility testing, prime numbers, deterministic primality tests"
+          }
+        ]
+      },
+      {
+        "name":"Quadratic Residues",
+        "files":[
+          {
+            "name":"Legendre Symbol",
+            "type":"file",
+            "path":"./Docs/Number_Theory/Primes/quad.pdf",
+            "thumbnail": "./images/quad.png",
+            "caption": "Note on quadratic residues",
+            "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient, jacobi symbol, reciprocity, wilsons theorem, chinese remainder theorem, crt, gauss lemma"
           },
           {
             "name": "Tonelli Shanks Algorithm",
@@ -303,7 +332,7 @@
             "thumbnail": "./images/prime.png",
             "caption": "Finding roots of a QR mod prime",
             "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
-          }
+          }    
         ]
       }
     ]
@@ -533,6 +562,26 @@
             "thumbnail": "./images/cn.png",
             "caption": "Computer Networks notes",
             "tags": "Computer Networks, OSI model, TCP/IP model, Routing protocols, Network security"
+          }
+        ]
+      }
+    ]
+  },
+  "prog":{
+    "name": "Programming",
+    "subtopics": [
+      {
+        "name":"RUST",
+        "files":[
+          {
+            "name": "sr",
+            "type": "html",
+            "htmlPath": "./mdd.html",
+            "content":"",
+            "thumbnail": "./images/default.jpg",
+            "caption": "",
+            "tags": ""
+            
           }
         ]
       }

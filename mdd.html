@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markdown Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="ctent">Loading...</div>
+
+  <script>
+    fetch("./FRI.md")
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById("ctent").innerHTML = marked.parse(md);
+      });
+  </script>
+</body>
+</html>
