@@ -13,11 +13,16 @@ function notesApp() {
     isSearching: false,
     previousTopic: null,
     previousSubtopic: null,
-
+    renderedHtml:'', //for markdown files
     async init() {
       
       const res = await fetch('topics.json');
       this.topics = await res.json();
+    },
+    async loadMarkdown(activeFile) { 
+                    const response = await fetch(activeFile.mdPath);
+                    const mdText = await response.text();
+                    this.renderedHtml = marked.parse(mdText);
     },
     selectTopicAndSubtopic(topicKey, subIndex) {
       

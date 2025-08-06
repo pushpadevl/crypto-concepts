@@ -251,6 +251,21 @@
         ]
       },
       {
+        "name":"Interactive Oracle Proofs",
+        "files":[
+          {
+            "name": "FRI IOP",
+            "type": "markdown",
+            "content":"",
+            "mdPath": "./FRI.md",
+            "thumbnail": "./images/pazk.png",
+            "caption": "Manuscript by Justin Thaler",
+            "tags": "Zero knowledge proofs, interactive proofs, non-interactive proofs, SNARKs, Interactive Oracle Proof, IOP"
+          
+          }
+        ]
+      },
+      {
         "name": "Study material",
         "files": [
           {
@@ -332,7 +347,16 @@
             "thumbnail": "./images/prime.png",
             "caption": "Finding roots of a QR mod prime",
             "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
-          }    
+          },
+          {
+            "name":"Euclidean algorithm",
+            "type": "file",
+            "path": "./Docs/Number_Theory/Primes/inverse.pdf",
+            "thumbnail": "./images/prime.png",
+            "caption": "Finding inverse of a number",
+            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
+            
+          }
         ]
       }
     ]
