@@ -14,6 +14,7 @@
   </script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Defining it below notesAPp.js script src line breaks the markdown reader as notesApp uses this-->
 <script src="./notesApp.js"></script>
   <style>
     ::-webkit-scrollbar {
@@ -90,6 +91,7 @@
       </div>
     </header>
     <div class="flex-1">
+      <!-- Profile page-->
       <template x-if="!isSearching && !selectedTopic">
         <div class="text-gray-700 ml-0">
           <iframe src="https://pushpadevl.github.io" class="w-full h-[100vh] backdrop-blur-sm"></iframe>
@@ -152,11 +154,26 @@
             </div>
             <div>
             <template x-if="activeFile.type === 'file'">
-              <iframe :src="activeFile.path" class="w-full h-[80vh] border rounded-lg shadow-lg bg-white"></iframe>
+              <iframe :src="activeFile.path" class="w-full h-[100vh] border rounded-lg shadow-lg bg-white"></iframe>
             </template>
             <template x-if="activeFile.type === 'html'">
               <div class="prose max-w-full bg-white dark:bg-slate-900 p-6 rounded-lg shadow" x-html="activeFile.content"></div>
             </template>
+            <template x-if="activeFile.type === 'markdown'">
+              <div x-init="loadMarkdown(activeFile)"
+                class="prose max-w-full bg-white dark:bg-slate-900 p-6 rounded-lg shadow">
+                <template x-if="renderedHtml">
+                  <div x-html="renderedHtml"></div>
+                </template>
+                <template x-if="!renderedHtml">
+                  <div>Loading content...</div>
+                </template>
+              </div>
+              <!--
+                <iframe :src="activeFile.mdPath" class="w-full h-[100vh] border rounded-lg shadow-lg bg-white"></iframe>-->
+              </div>
+            </template>
+            
           </div>
 
           </div>

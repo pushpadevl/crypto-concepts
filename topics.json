@@ -69,13 +69,21 @@
             "tags": "Hash to curve algorithms used to map hash values to points on an elliptic curve."
           },
           {
-            "name": "Isogenies",
+            "name": "Isogeny Paper",
             "type": "file",
             "path": "./Docs/ZKP/Elliptic_curves/isogney_paper.pdf",
             "thumbnail": "./images/isogeny.png",
             "caption": "Isogenies over Elliptic Curves, Post Quantum cryptography",
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance"
-          }
+          },
+          {
+            "name": "Isogenies Note 1",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/isogeny1.pdf",
+            "thumbnail": "./images/isogeny.png",
+            "caption": "Some maths notes for reading isogeny",
+            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
+          }          
         ]
       }
     ]
@@ -251,6 +259,21 @@
         ]
       },
       {
+        "name":"Interactive Oracle Proofs",
+        "files":[
+          {
+            "name": "FRI IOP",
+            "type": "markdown",
+            "content":"",
+            "mdPath": "./FRI.md",
+            "thumbnail": "./images/pazk.png",
+            "caption": "Manuscript by Justin Thaler",
+            "tags": "Zero knowledge proofs, interactive proofs, non-interactive proofs, SNARKs, Interactive Oracle Proof, IOP"
+          
+          }
+        ]
+      },
+      {
         "name": "Study material",
         "files": [
           {
@@ -291,8 +314,22 @@
   },
   
   "math": {
-    "name": "Number theory",
+    
+    "name": "Mathematics",
     "subtopics": [
+      {
+        "name": "Abstract algebra",
+        "files":[
+          {
+            "name": "Endomorphisms, Homothety and isogenies",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/isogeny1.pdf",
+            "thumbnail": "./images/isogeny.png",
+            "caption": "Some maths notes for reading isogeny",
+            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
+          }
+        ]
+      },
       {
         "name": "Group Theory",
         "files": [
@@ -332,7 +369,16 @@
             "thumbnail": "./images/prime.png",
             "caption": "Finding roots of a QR mod prime",
             "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
-          }    
+          },
+          {
+            "name":"Euclidean algorithm",
+            "type": "file",
+            "path": "./Docs/Number_Theory/Primes/inverse.pdf",
+            "thumbnail": "./images/prime.png",
+            "caption": "Finding inverse of a number",
+            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
+            
+          }
         ]
       }
     ]
