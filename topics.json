@@ -69,13 +69,21 @@
             "tags": "Hash to curve algorithms used to map hash values to points on an elliptic curve."
           },
           {
-            "name": "Isogenies",
+            "name": "Isogeny Paper",
             "type": "file",
             "path": "./Docs/ZKP/Elliptic_curves/isogney_paper.pdf",
             "thumbnail": "./images/isogeny.png",
             "caption": "Isogenies over Elliptic Curves, Post Quantum cryptography",
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance"
-          }
+          },
+          {
+            "name": "Isogenies Note 1",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/isogeny1.pdf",
+            "thumbnail": "./images/isogeny.png",
+            "caption": "Some maths notes for reading isogeny",
+            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
+          }          
         ]
       }
     ]
@@ -306,8 +314,22 @@
   },
   
   "math": {
-    "name": "Number theory",
+    
+    "name": "Mathematics",
     "subtopics": [
+      {
+        "name": "Abstract algebra",
+        "files":[
+          {
+            "name": "Endomorphisms, Homothety and isogenies",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/isogeny1.pdf",
+            "thumbnail": "./images/isogeny.png",
+            "caption": "Some maths notes for reading isogeny",
+            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
+          }
+        ]
+      },
       {
         "name": "Group Theory",
         "files": [
