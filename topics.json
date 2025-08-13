@@ -55,7 +55,7 @@
           {
             "name": "Bilinear Pairings",
             "type": "file",
-            "path": "./Docs/ZKP/Elliptic_curves/pairings.pdf",
+            "path": "./Docs/Classical/Elliptic_curves/pairings.pdf",
             "thumbnail": "./images/pairings.png",
             "caption": "Pairing notes over elliptic curves.",
             "tags": "Bilinear Pairing over Elliptic curves."
@@ -63,7 +63,7 @@
           {
             "name": "Hash to curve",
             "type": "file",
-            "path": "./Docs/ZKP/Elliptic_curves/Paper_hash2curve.pdf",
+            "path": "./Docs/Classical/Elliptic_curves/Paper_hash2curve.pdf",
             "thumbnail": "./images/hash2curve.png",
             "caption": "Used to map hash values to points on an elliptic curve.",
             "tags": "Hash to curve algorithms used to map hash values to points on an elliptic curve."
@@ -71,7 +71,7 @@
           {
             "name": "Isogeny Paper",
             "type": "file",
-            "path": "./Docs/ZKP/Elliptic_curves/isogney_paper.pdf",
+            "path": "./Docs/Classical/Elliptic_curves/isogney_paper.pdf",
             "thumbnail": "./images/isogeny.png",
             "caption": "Isogenies over Elliptic Curves, Post Quantum cryptography",
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance"
@@ -83,6 +83,14 @@
             "thumbnail": "./images/isogeny.png",
             "caption": "Some maths notes for reading isogeny",
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
+          },
+          {
+            "name": "Function Fields on ellptic curves",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/functionfields.pdf",
+            "thumbnail": "./images/isogeny.png",
+            "caption": "Notes related to isogeny",
+            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, irreducibility, weierstrass equation, field, function fields, rational functions, rings, algebraic extensions"
           }          
         ]
       }
@@ -230,7 +238,7 @@
           {
             "name": "Bilinear Pairings",
             "type": "file",
-            "path": "./Docs/ZKP/Elliptic_curves/pairings.pdf",
+            "path": "./Docs/Classical/Elliptic_curves/pairings.pdf",
             "thumbnail": "./images/pairings.png",
             "caption": "Pairing notes over elliptic curves.",
             "tags": "Bilinear Pairing over Elliptic curves, used in Groth16 and PLONK"
