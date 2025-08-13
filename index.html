@@ -24,6 +24,25 @@
       background: #bbb;
       border-radius: 6px;
     }
+    body {
+        background-image: url('./img/ou.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .searchbar {
+      color: white;
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      padding: 10px 25px;
+      background: transparent;
+      max-width: 250px;
+    }
+
+    .searchbar:active {
+      box-shadow: 2px 2px 15px #b0beeb inset;
+    }
     </style>
 </head>
 
@@ -75,26 +94,47 @@
 <!-- Main Content Area -->
   <div class="flex flex-col flex-1 p-3 overflow-y-auto h-screen">
       <!-- Header Bar -->
-    <header class="text-gray-500 text-center  px-4 py-3 flex justify-between items-center w-full">
+    <header class="text-gray-100 text-center  px-4 py-3 flex justify-between items-center w-full">
       <div class="text-xl font-bold"></div>
-      <div class="flex items-center space-x-4 text-sm">
-        <a href="mailto:pushpa.dev@outlook.com"  class="hover:underline">&#x2197 Email</a>
+      <!--<div class="mt-4 sm:mt-0 space-x-6 ">
+      </div>-->
+      <div class="text-lg text-gray-300 font-bold"> Fletore - Cryptography notes</div>
+      <div class="flex items-center space-x-6 text-sm">
+              <a href="/fletore/" target="_blank" class="text-gray-100 " title="Fletore (Cryptography notes)">
+                <img src="./img/flet.png" alt="Cryptography Notes" class="w-7 h-8 inline" />
+              </a>
+              <a href="https://www.github.com/pushpadevl" target="_blank" class="text-gray-100 " title="GitHub">
+                <img src="./img/gh.png" alt="Guthub" class="rounded-lg w-8 h-8 inline" />
+              </a>
+              <a href="https://www.linkedin.com/in/pushpendra-pal-14ab21186/" target="_blank" class="text-gray-100 " title="LinkedIn">
+                <img src="./img/lin.png" alt="LinkedIn" class="rounded-lg w-8 h-8 inline" />
+              </a>
+              <a href="https://soloist.ai/mirrored" target="_blank" class="text-gray-100 " title="Photography">
+                <img src="./img/wp.png" alt="Photography" class="w-8 h-8 inline" />
+              </a>
+              <a href="mailto:pushpa.dev@outlook.com" class="text-gray-100 " title="Mail">
+                <img src="./img/gm.png" alt="Mail" class=" w-8 h-8 inline" />
+              </a>
+        <!--
+              <a href="mailto:pushpa.dev@outlook.com"  class="hover:underline">&#x2197 Email</a>
         <a href="https://www.github.com/pushpadevl" target="_blank" class="hover:underline ">&#x2197 GitHub</a>
         <a href="https://www.linkedin.com/in/pushpendra-pal-14ab21186/" target="_blank" class="hover:underline ">&#x2197 LinkedIn</a>
+              -->
         <input
           x-model="searchQuery"
           @input="searchFiles"
           type="text"
           placeholder="&#x1f50e search notes..."
-          class="px-2 py-1 rounded text-black"
+          class="px-2 py-2 rounded text-black searchbar"
         />
+        
       </div>
     </header>
     <div class="flex-1">
       <!-- Profile page-->
       <template x-if="!isSearching && !selectedTopic">
-        <div class="text-gray-700 ml-0">
-          <iframe src="front.html" class="w-full h-[100vh] backdrop-blur-sm"></iframe>
+        <div class="ml-0">
+          <iframe src="front.html" class="w-full h-[90vh] backdrop-blur-lg"></iframe>
         </div>
       </template>
 
@@ -149,8 +189,8 @@
           <!-- File Viewer -->
           <div class="flex-1">
             <div class="flex justify-between items-center mb-4">
-              <h2 class="text-xl font-semibold text-gray-500" x-text="activeFile.name"></h2>
-              <button class="text-sm text-gray-500 hover:underline" @click="activeFile = null; showFileList = false">← Back to Subtopics</button>
+              <h2 class="text-xl font-semibold text-gray-100" x-text="activeFile.name"></h2>
+              <button class="text-sm text-gray-100 hover:underline" @click="activeFile = null; showFileList = false">← Back to Subtopics</button>
             </div>
             <div>
             <template x-if="activeFile.type === 'file'">
@@ -178,16 +218,12 @@
 
           </div>
 
-          <div
-            class="w-64 bg-white-100 rounded-lg p-4"
-            x-show="showSidebar"
-            x-transition
-          >
-            <h3 class="text-lg text-gray-500 font-semibold mb-2">Related topics</h3>
+          <div class="w-64 bg-white-100 rounded-lg p-4" x-show="showSidebar" x-transition>
+            <h3 class="text-lg text-gray-100 font-semibold mb-2">Related topics</h3>
             <ul class="list-disc list-inside space-y-1">
               <template x-for="(file, idx) in topics[selectedTopic].subtopics[selectedSubtopic].files" :key="idx">
                 <li>
-                  <button class="text-left text-gray-500 hover:underline" @click="activeFile = file" x-text="file.name"></button>
+                  <button class="text-left text-gray-100 hover:underline" @click="activeFile = file" x-text="file.name"></button>
                 </li>
               </template>
             </ul>
@@ -195,7 +231,7 @@
 
           <!-- Toggle sub subtopic sidebar visibility-->
           <button
-              class="fixed top-1/3 right-1 -translate-t-1/2 bg-white text-lg text-gray-500 px-1 py-5 rounded shadow "
+              class="fixed top-1/3 right-1 -translate-t-1/2 bg-white text-lg text-gray-100 px-1 py-5 rounded shadow "
               @click="showSidebar = !showSidebar"
             >
               //
@@ -222,11 +258,11 @@
       </template>
       <!-- No Results -->
       <template x-if="isSearching && searchResults.length === 0">
-        <div class="text-gray-500 text-lg">No results found for "<span x-text="searchQuery"></span>"</div>
+        <div class="text-gray-100 text-lg">No results found for "<span x-text="searchQuery"></span>"</div>
       </template>
 
     </div>
-    <footer class="text-gray-500 text-center text-sm py-1">
+    <footer class="text-gray-100 text-center text-sm py-1">
         © 2025 <a href="https://www.github.com/pushpadevl" target="_blank" hover="underline">pushpadevl.</a> ✏️ with ♥ for cryptographers.
     </footer>
     </div>
