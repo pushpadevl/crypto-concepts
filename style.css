@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /*background: radial-gradient(ellipse at bottom right, #452531 0%, #090a0f 40%);*/
+  overflow:auto;
+  font-family: sans-serif;
+  color: #1d1b1b;
+}
+
+
+    svg {
+      display:block;
+      margin: auto;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+    }
+
+    .arc path {
+      stroke: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
+      transition: all 0.2s ease;
+      
+    }
+
+    .arc path:hover {
+      filter:
+        drop-shadow(0 0 5px #00ffffaa)
+        drop-shadow(0 0 15px #00ffff33);
+      transform: scale(1.02);
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0, 20, 30, 0.9);
+      color: #050000;
+      padding: 6px 12px;
+      border-radius: 5px;
+      border: 1px solid #00ffff55;
+      font-size: 14px;
+      text-wrap-mode:wrap;
+      text-wrap-style:pretty;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-family: monospace;
+      z-index:20;
+    }

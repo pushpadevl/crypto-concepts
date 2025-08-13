@@ -77,7 +77,7 @@
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance"
           },
           {
-            "name": "Isogenies Note 1",
+            "name": "Endomorphisms, Homothety and isogenies",
             "type": "file",
             "path": "./Docs/Classical/Elliptic_curves/isogeny1.pdf",
             "thumbnail": "./images/isogeny.png",
@@ -85,7 +85,7 @@
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
           },
           {
-            "name": "Function Fields on ellptic curves",
+            "name": "Function Fields on ellitpic curves",
             "type": "file",
             "path": "./Docs/Classical/Elliptic_curves/functionfields.pdf",
             "thumbnail": "./images/isogeny.png",
@@ -320,7 +320,6 @@
       }
     ]
   },
-  
   "math": {
     
     "name": "Mathematics",
@@ -335,6 +334,14 @@
             "thumbnail": "./images/isogeny.png",
             "caption": "Some maths notes for reading isogeny",
             "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
+          },
+          {
+            "name": "Function Fields on ellptic curves",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/functionfields.pdf",
+            "thumbnail": "./images/isogeny.png",
+            "caption": "Notes related to isogeny",
+            "tags": "abstract algebra, isogeny over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, irreducibility, weierstrass equation, field, function fields, rational functions, rings, algebraic extensions"
           }
         ]
       },
