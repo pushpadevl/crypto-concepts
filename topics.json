@@ -325,6 +325,21 @@
     "name": "Mathematics",
     "subtopics": [
       {
+        "name": "Random Maths notes",
+        "files":[
+          {
+            "name": "Recurrences",
+            "type": "file",
+            "path": "./Docs/Number_Theory/Recurrences/rec.pdf",
+            "thumbnail": "./images/rec.png",
+            "caption": "Methods to solve recurrences",
+            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
+          
+          }
+
+        ]
+      },
+      {
         "name": "Abstract algebra",
         "files":[
           {
