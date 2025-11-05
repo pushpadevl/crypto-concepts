@@ -324,7 +324,7 @@
     
     "name": "Mathematics",
     "subtopics": [
-      {
+{
         "name": "Discrete maths",
         "files":[
           {
@@ -338,28 +338,28 @@
             "name": "Binomial coefficient",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/binomial_coefficient.pdf",
-            "thumbnail": "./images/rec.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Methods to solve recurrences",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Generating functions",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/generating_functions.pdf",
-            "thumbnail": "./images/rec.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Methods to solve recurrences",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Induction Notes",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/InductionNotes.pdf",
-            "thumbnail": "./images/rec.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Methods to solve recurrences",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Kuratowski Xu,Yifan",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/Kuratowski_Xu,Yifan.pdf",
-            "thumbnail": "./images/rec.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Methods to solve recurrences",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
@@ -373,7 +373,7 @@
             "name": "Laszlo Babai_notes",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/laszlobabai_notes.pdf",
-            "thumbnail": "./images/rec.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Methods to solve recurrences",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           }
@@ -448,7 +448,7 @@
             "name": "Tonelli Shanks Algorithm",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/tonqr.pdf",
-            "thumbnail": "./images/prime.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Finding roots of a QR mod prime",
             "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
           },
@@ -456,7 +456,7 @@
             "name":"Euclidean algorithm",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/inverse.pdf",
-            "thumbnail": "./images/prime.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Finding inverse of a number",
             "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
             
@@ -465,7 +465,7 @@
             "name":"Fermat's test",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/fermattest.pdf",
-            "thumbnail": "./images/prime.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
             "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
           },
@@ -473,7 +473,7 @@
             "name":"Miller rabin test",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/millerrabin.pdf",
-            "thumbnail": "./images/prime.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
             "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
           },
@@ -481,7 +481,7 @@
             "name":"Solovay Strassen's test",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/solovaystrassen.pdf",
-            "thumbnail": "./images/prime.png",
+            "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
             "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
           }
