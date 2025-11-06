@@ -339,28 +339,28 @@
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/binomial_coefficient.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
+            "caption": "Solving combinatorics with binomial series",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Generating functions",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/generating_functions.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
+            "caption": "Polynomial generating functions for combinatorics",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Induction Notes",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/InductionNotes.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
+            "caption": "Induction methods",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Kuratowski Xu,Yifan",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/Kuratowski_Xu,Yifan.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
+            "caption": "Graph theory proof of kuratowski theorem",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           },{
             "name": "Recurrences-2",
@@ -374,7 +374,7 @@
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/laszlobabai_notes.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
+            "caption": "Notes on discrete maths by Laszlo Babai",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
           }
 
