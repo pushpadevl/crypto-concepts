@@ -1,7 +1,7 @@
 
   const width = 1000;
   const radius = width/2 ;
-  const svg = d3.select("svg").attr("viewBox", [0, 0, width, width]);
+  const svg = d3.select("svg").attr("viewBox", [0, 0, width, width-100]);
   const tooltip = d3.select(".tooltip");
 
   function toHierarchy(json) {

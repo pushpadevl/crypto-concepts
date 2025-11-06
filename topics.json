@@ -97,7 +97,7 @@
     ]
   },
   "zkp": {
-    "name": "ZK Proofs",
+    "name": "ZK",
     "subtopics": [
       {
         "name": "PLONK",
@@ -340,28 +340,28 @@
             "path": "./Docs/Number_Theory/Discrete_maths/binomial_coefficient.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Solving combinatorics with binomial series",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
+            "tags": "binomial coefficient, combinatorics, discrete mathematics, polynomial, series expansion"
+            },{
             "name": "Generating functions",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/generating_functions.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Polynomial generating functions for combinatorics",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
+            "tags": "generating functions, combinatorics, polynomial, recurrence relations, exponential generating functions"
           },{
             "name": "Induction Notes",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/InductionNotes.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Induction methods",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
+            "tags": "induction, mathematical proofs, discrete mathematics, recursion, base case, inductive step"
+            },{
             "name": "Kuratowski Xu,Yifan",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/Kuratowski_Xu,Yifan.pdf",
             "thumbnail": "./images/default.jpg",
-            "caption": "Graph theory proof of kuratowski theorem",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
+            "caption": "Graph theory proof of Kuratowski's theorem",
+            "tags": "graph theory, Kuratowski's theorem, combinatorics, discrete mathematics"
           },{
             "name": "Recurrences-2",
             "type": "file",
@@ -375,7 +375,7 @@
             "path": "./Docs/Number_Theory/Discrete_maths/laszlobabai_notes.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Notes on discrete maths by Laszlo Babai",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
+            "tags": "Laszlo Babai, discrete mathematics, combinatorics, graph theory, algorithms, complexity, lecture notes"
           }
 
         ]
@@ -399,13 +399,14 @@
             "caption": "Notes related to isogeny",
             "tags": "abstract algebra, isogeny over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, irreducibility, weierstrass equation, field, function fields, rational functions, rings, algebraic extensions"
           },
-          {
+            {
             "name": "Euclidean Domain and PID",
             "type": "file",
             "path": "./Docs/Number_Theory/Abstract_algebra/ED_PID.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Notes on ED and Principal Ideal Domain and Unique Factorization Domains",
-            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
+            "tags": "Euclidean domain, Principal ideal domain, Unique factorization domain, abstract algebra"
+            
           },
           {
             "name": "Intro_to_Group_theory",
@@ -413,7 +414,7 @@
             "path": "./Docs/Number_Theory/Abstract_algebra/Module1.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Group theory, isomorphism, homomorphism",
-            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
+            "tags": "Group theory, Field theory, Isomorphism, Homomorphism, Subgroup, Cosets, Galois theory, Polynomial irreducibility"
           }
         ]
       },
@@ -461,30 +462,30 @@
             "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
             
           },
-          {
+            {
             "name":"Fermat's test",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/fermattest.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
+            "tags": "Fermat's primality test, prime numbers, probabilistic testing, modular arithmetic, gcd, number theory, composite numbers"
           },
-          {
+            {
             "name":"Miller rabin test",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/millerrabin.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
-          },
-          {
+            "tags": "Miller-Rabin primality test, probabilistic testing, prime numbers, modular arithmetic, gcd, totient"
+            },
+            {
             "name":"Solovay Strassen's test",
             "type": "file",
             "path": "./Docs/Number_Theory/Primes/solovaystrassen.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
-          }
+            "tags": "Solovay-Strassen primality test, probabilistic testing, prime numbers, modular arithmetic, gcd, totient"
+            }
         ]
       }
     ]
@@ -703,40 +704,8 @@
 
           
         ]
-      },
-      {
-        "name": "Computer Networks",
-        "files": [
-          {
-            "name": "Computer Networks",
-            "type": "file",
-            "path": "./Docs/CS/CN/CN.pdf",
-            "thumbnail": "./images/cn.png",
-            "caption": "Computer Networks notes",
-            "tags": "Computer Networks, OSI model, TCP/IP model, Routing protocols, Network security"
-          }
-        ]
-      }
-    ]
-  },
-  "prog":{
-    "name": "Programming",
-    "subtopics": [
-      {
-        "name":"RUST",
-        "files":[
-          {
-            "name": "sr",
-            "type": "html",
-            "htmlPath": "./mdd.html",
-            "content":"",
-            "thumbnail": "./images/default.jpg",
-            "caption": "",
-            "tags": ""
-            
-          }
-        ]
       }
     ]
   }
+  
 }

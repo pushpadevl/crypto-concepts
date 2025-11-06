@@ -1,165 +1,36 @@
-"subtopics": [
-{
-        "name": "Discrete maths",
+/*,
+  "prog":{
+    "name": "Programming",
+    "subtopics": [
+      {
+        "name":"RUST",
         "files":[
           {
-            "name": "Recurrences",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/rec.pdf",
-            "thumbnail": "./images/rec.png",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
-            "name": "Binomial coefficient",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/binomial_coefficient.pdf",
+            "name": "sr",
+            "type": "html",
+            "htmlPath": "./mdd.html",
+            "content":"",
             "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
-            "name": "Generating functions",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/generating_functions.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
-            "name": "Induction Notes",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/InductionNotes.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
-            "name": "Kuratowski Xu,Yifan",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/Kuratowski_Xu,Yifan.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
-            "name": "Recurrences-2",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/rec2.pdf",
-            "thumbnail": "./images/rec.png",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
-            "name": "Laszlo Babai_notes",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Discrete_maths/laszlobabai_notes.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Methods to solve recurrences",
-            "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          }
-
-        ]
-      },
-      {
-        "name": "Abstract algebra",
-        "files":[
-          {
-            "name": "Endomorphisms, Homothety and isogenies",
-            "type": "file",
-            "path": "./Docs/Classical/Elliptic_curves/isogeny1.pdf",
-            "thumbnail": "./images/isogeny.png",
-            "caption": "Some maths notes for reading isogeny",
-            "tags": "Isogenies over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, endomorphism, homothety, torus, tori, genus, frobenius map, irreducibility, weierstrass equation, laurent series, taylor series, field, extensions, automorphism"
-          },
-          {
-            "name": "Function Fields on ellptic curves",
-            "type": "file",
-            "path": "./Docs/Classical/Elliptic_curves/functionfields.pdf",
-            "thumbnail": "./images/isogeny.png",
-            "caption": "Notes related to isogeny",
-            "tags": "abstract algebra, isogeny over Elliptic Curves, Post Quantum cryptography, cryptographic protocols, elliptic curves, quantum resistance, irreducibility, weierstrass equation, field, function fields, rational functions, rings, algebraic extensions"
-          },
-          {
-            "name": "Euclidean Domain and PID",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Abstract_algebra/ED_PID.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Notes on ED and Principal Ideal Domain and Unique Factorization Domains",
-            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
-          },
-          {
-            "name": "Intro_to_Group_theory",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Abstract_algebra/Module1.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Group theory, isomorphism, homomorphism",
-            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
-          }
-        ]
-      },
-      {
-        "name": "Primes",
-        "files": [
-          {
-            "name": "Stanford GT notes",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/Stanford_GT_NOTES.pdf",
-            "thumbnail": "./images/qr.png",
-            "caption": "Group theory notes",
-            "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
-          },
-          {
-            "name": "Primality testing",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/AKS_primality_v6.pdf",
-            "thumbnail": "./images/prime.png",
-            "caption": "Deterministic factoring using AKS primality testing algorithm",
-            "tags": "AKS primaility testing, prime numbers, deterministic primality tests"
-          },
-          {
-            "name":"Legendre Symbol",
-            "type":"file",
-            "path":"./Docs/Number_Theory/Primes/quad.pdf",
-            "thumbnail": "./images/quad.png",
-            "caption": "Note on quadratic residues",
-            "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient, jacobi symbol, reciprocity, wilsons theorem, chinese remainder theorem, crt, gauss lemma"
-          },
-          {
-            "name": "Tonelli Shanks Algorithm",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/tonqr.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Finding roots of a QR mod prime",
-            "tags": "prime numbers, quadratic residue, legendre coefficient, exponentiation, square root, roots of unity, totient"
-          },
-          {
-            "name":"Euclidean algorithm",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/inverse.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Finding inverse of a number",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
+            "caption": "",
+            "tags": ""
             
-          },
-          {
-            "name":"Fermat's test",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/fermattest.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Test for a prime",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
-          },
-          {
-            "name":"Miller rabin test",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/millerrabin.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Test for a prime",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
-          },
-          {
-            "name":"Solovay Strassen's test",
-            "type": "file",
-            "path": "./Docs/Number_Theory/Primes/solovaystrassen.pdf",
-            "thumbnail": "./images/default.jpg",
-            "caption": "Test for a prime",
-            "tags": "prime numbers, euclidean, algorithm, inverse, modular field, gcd, totient"
           }
         ]
       }
     ]
+  }*/
+
+  ,
+      {
+        "name": "Computer Networks",
+        "files": [
+          {
+            "name": "Computer Networks",
+            "type": "file",
+            "path": "./Docs/CS/CN/CN.pdf",
+            "thumbnail": "./images/cn.png",
+            "caption": "Computer Networks notes",
+            "tags": "Computer Networks, OSI model, TCP/IP model, Routing protocols, Network security"
+          }
+        ]
+      }
