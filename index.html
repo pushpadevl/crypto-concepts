@@ -126,9 +126,9 @@
            return;
          } else {
            // For non-leaf nodes, just navigate to topic/subtopic
-           selectedTopic = payload.topicKey ?? null;
-           selectedSubtopic = payload.subIndex ?? null;
-           activeFile = null; // Clear active file for non-leaf navigation
+           //selectedTopic = payload.topicKey ?? null;
+           //selectedSubtopic = payload.subIndex ?? null;
+           //activeFile = null; // Clear active file for non-leaf navigation
          }
 
          // Update dropdown state
@@ -211,7 +211,7 @@
           @input="searchFiles"
           type="text"
           placeholder="&#x1f50e search notes..."
-          class="px-2 py-2 rounded text-black searchbar"
+          class="px-2 py-2 rounded text-white searchbar"
         />
         
       </div>
@@ -221,7 +221,7 @@
       <template x-if="!isSearching && !selectedTopic">
         <div class="ml-0">
           <!-- <iframe src="front.html" class="w-full h-[90vh] backdrop-blur-lg"></iframe>--> <!-- circ.js is used inside front.html-->
-          <iframe src="treemap.html" class="w-full h-[90vh] backdrop-lg"></iframe>
+          <iframe src="treemap.html" class="w-full h-[80vh] backdrop-lg"></iframe>
         </div>
       </template>
 
@@ -271,6 +271,7 @@
             </template>
         </div>
       </template>
+
       <template x-if="!isSearching && activeFile">
         <div class="flex gap-4">
           <!-- File Viewer -->
@@ -286,6 +287,7 @@
             <template x-if="activeFile.type === 'html'">
               <div class="prose max-w-full bg-white dark:bg-slate-900 p-6 rounded-lg shadow" x-html="activeFile.content"></div>
             </template>
+
             <template x-if="activeFile.type === 'markdown'">
               <div x-init="loadMarkdown(activeFile)"
                 class="prose max-w-full bg-white dark:bg-slate-900 p-6 rounded-lg shadow">

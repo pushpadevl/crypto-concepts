@@ -89,7 +89,7 @@ color: [
         series: [
           {
             type: 'treemap',
-            roam: false,
+            roam: true,
             nodeClick: 'zoomToNode',
             label: {
               show: true,
@@ -157,7 +157,7 @@ color: [
         }
         
         // Allow zooming for non-leaf nodes
-        if (nodeLevel <2) {
+        if (nodeLevel <1) {
           chart.dispatchAction({
             type: 'treemapZoomToNode',
             seriesIndex: 0,
