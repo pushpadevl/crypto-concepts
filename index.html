@@ -16,6 +16,70 @@
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Defining it below notesAPp.js script src line breaks the markdown reader as notesApp uses this-->
 <script src="./notesApp.js"></script>
+
+<script>
+  // Try to apply navigation to the Alpine component, retry until Alpine is ready
+  function applyTreemapNavigation(payload, attempt = 0) {
+    const MAX_ATTEMPTS = 30; // ~3 seconds
+    const compEl = document.querySelector('[x-data]');
+    if (!compEl) {
+      if (attempt < MAX_ATTEMPTS) return setTimeout(() => applyTreemapNavigation(payload, attempt + 1), 100);
+      // final fallback: dispatch DOM event
+      return document.dispatchEvent(new CustomEvent('treemapNavigation', { detail: payload }));
+    }
+
+    const alpineComp = compEl.__x || null;
+    const alpineData = (alpineComp && alpineComp.$data) ? alpineComp.$data : (compEl.__x && compEl.__x.$data ? compEl.__x.$data : null);
+
+    // Prefer calling component methods if present (keeps side-effects)
+    try {
+      if (alpineComp && typeof alpineComp.selectTopicAndSubtopic === 'function') {
+        alpineComp.selectTopicAndSubtopic(payload.topicKey, payload.subIndex);
+        if (payload.file && typeof alpineComp.selectFile === 'function') alpineComp.selectFile(payload.file);
+        return;
+      }
+      if (alpineData && typeof alpineData.selectTopicAndSubtopic === 'function') {
+        alpineData.selectTopicAndSubtopic(payload.topicKey, payload.subIndex);
+        if (payload.file && typeof alpineData.selectFile === 'function') alpineData.selectFile(payload.file);
+        return;
+      }
+    } catch (err) {
+      console.warn('Calling component selection method failed', err);
+    }
+
+    // If reactive data object exists, set it
+    if (alpineData) {
+      try {
+        alpineData.selectedTopic = payload.topicKey ?? null;
+        alpineData.selectedSubtopic = payload.subIndex ?? null;
+        if (payload.file) {
+          alpineData.activeFile = payload.file;
+          alpineData.isSearching = false;
+        }
+        // ensure dropdown for the topic is open so UI shows the subtopics
+        if (!alpineData.openDropdown) alpineData.openDropdown = {};
+        if (payload.topicKey) alpineData.openDropdown[payload.topicKey] = true;
+        return;
+      } catch (err) {
+        console.warn('Updating alpineData failed', err);
+      }
+    }
+
+    // If we reached here but Alpine not ready yet, retry a few times
+    if (attempt < MAX_ATTEMPTS) return setTimeout(() => applyTreemapNavigation(payload, attempt + 1), 100);
+
+    // final fallback: dispatch DOM event the app can listen for
+    document.dispatchEvent(new CustomEvent('treemapNavigation', { detail: payload }));
+  }
+
+  window.addEventListener('message', (event) => {
+    if (!event.data || event.data.type !== 'treemapNavigation') return;
+    console.log('parent received treemap message', event.data);
+    applyTreemapNavigation(event.data);
+  });
+
+
+</script>
   <style>
     ::-webkit-scrollbar {
       width: 6px;
@@ -50,6 +114,28 @@
        window.addEventListener('resize', () => {
          showSidebar = window.innerWidth >= 1024;
        });
+
+       // Listen inside Alpine component so selection runs with correct side-effects
+       document.addEventListener('treemapNavigation', (e) => {
+         const payload = e.detail ?? e;
+         
+         // Only set file if we're at a leaf node (level 2)
+         if (payload.nodeLevel === 3 && payload.file) {
+           activeFile = payload.file;
+           isSearching = false;
+           return;
+         } else {
+           // For non-leaf nodes, just navigate to topic/subtopic
+           selectedTopic = payload.topicKey ?? null;
+           selectedSubtopic = payload.subIndex ?? null;
+           activeFile = null; // Clear active file for non-leaf navigation
+         }
+
+         // Update dropdown state
+        // if (!openDropdown) openDropdown = {};
+        // if (payload.topicKey) openDropdown[payload.topicKey] = true;
+       });
+
        init();
      ">
 

@@ -31,27 +31,21 @@
     }
 
     function transformData(data) {
-      // Convert the JSON to ECharts treemap-compatible structure and preserve keys/indexes
-      const topics = Object.entries(data).map(([topicKey, topic]) => ({
-    name: topic.name,
-    topicKey: topicKey,
-    children: (topic.subtopics || []).map((sub, subIndex) => ({
-      name: sub.name,
-      topicKey: topicKey,
-      subIndex: subIndex,
-      children: (sub.files || []).map(f => ({
-        name: f.name,
-        value: 1,
-        topicKey: topicKey,
-        subIndex: subIndex,
-        file: f,
-        path: f.path || f.htmlPath || f.mdPath || "",
-        caption: f.caption || "",
-        thumbnail: f.thumbnail || "",
-        tags: f.tags || ""
-      }))
-    }))
-  }));
+      // Convert the JSON to ECharts treemap-compatible structure
+      const topics = Object.values(data).map(topic => ({
+        name: topic.name,
+        children: topic.subtopics.map(sub => ({
+          name: sub.name,
+          children: sub.files.map(f => ({
+            name: f.name,
+            value: 1,
+            path: f.path || f.htmlPath || f.mdPath || "",
+            caption: f.caption || "",
+            thumbnail: f.thumbnail || "",
+            tags: f.tags || ""
+          }))
+        }))
+      }));
       return topics;
     }
 
@@ -90,14 +84,14 @@ color: [
           {
             type: 'treemap',
             roam: false,
-            nodeClick: 'zoomToNode',
+            nodeClick: 'link',
             label: {
               show: true,
               formatter: '{b}',
               color: '#fff',
               fontSize: 12
             },
-            breadcrumb: { show: true},
+            breadcrumb: { show: true },
             upperLabel: {
               show: true,
               height: 30,
@@ -137,45 +131,9 @@ color: [
 
       // Click event to open the file if available
       chart.on('click', function (params) {
-        console.log('treemap click', params);
-        const data = params.data || {};
-        const nodeLevel = Array.isArray(params.treePathInfo) ? params.treePathInfo.length - 1 : null;
-        
-        // Only send navigation message for leaf nodes (level 2)
-        if (nodeLevel === 3) {
-          const payload = {
-            type: 'treemapNavigation',
-            topicKey: data.topicKey,
-            subIndex: data.subIndex,
-            file: data.file,
-            nodeLevel: nodeLevel,
-            isLeafNode: true  // Flag to indicate this is a file node
-          };
-          
-          // Send message to parent
-          window.parent.postMessage(payload, '*');
+        if (params.data && params.data.path) {
+          window.open(params.data.path, '_blank');
         }
-        
-        // Allow zooming for non-leaf nodes
-        if (nodeLevel <2) {
-          chart.dispatchAction({
-            type: 'treemapZoomToNode',
-            seriesIndex: 0,
-            dataIndex: params.dataIndex
-          });
-        }
-      });
-
-      // Add zoom out handler for breadcrumb
-      chart.on('treemapRootToNode', function() {
-        // Clear any stored navigation state when zooming out
-        window.parent.postMessage({
-          type: 'treemapNavigation',
-          topicKey: null,
-          subIndex: null,
-          file: null,
-          nodeLevel: null
-        }, '*');
       });
 
       window.addEventListener('resize', chart.resize);
