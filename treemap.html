@@ -60,7 +60,7 @@
 
       const option = {
         backgroundColor: 'transparent',
-color: [
+        color: [
             // vibrant neon
             '#7C4DFF', // violet
             '#FF4081', // pink
@@ -78,7 +78,8 @@ color: [
           formatter: function (info) {
             const data = info.data;
             return `
-              <div class="tooltip">
+              <!--<div class="tooltip">-->
+              <div class="max-width:320px">
                 <strong>${data.name}</strong><br/>
                 ${data.caption ? data.caption + "<br/>" : ""}
                 ${data.tags ? "<em>" + data.tags + "</em>" : ""}
@@ -89,21 +90,29 @@ color: [
         series: [
           {
             type: 'treemap',
-            roam: true,
+            roam: false,
             nodeClick: 'zoomToNode',
             label: {
               show: true,
               formatter: '{b}',
               color: '#fff',
-              fontSize: 12
+              fontSize: 14,
+              overflow:'break',
+              position: 'inside',
+              // trim long names visually if still necessary
+              ellipsis: true,
+              // keep label visible on emphasis too
+              emphasis: { show: true, fontSize: 15 },
+              
             },
             breadcrumb: { show: true},
             upperLabel: {
               show: true,
-              height: 30,
+              height: 20,
               color: '#fff',
               backgroundColor: 'transparent',
-              fontSize: 14
+              fontSize: 16,
+              
             },
             itemStyle: {
               borderColor:'rgb(5,5,5,0.1)',
@@ -118,11 +127,15 @@ color: [
                   borderColor: 'transparent',
                   borderWidth: 2,
                   gapWidth: 20,
-                  
                 },
                 colorSaturation: [0.3, 0.5]
               },
               {
+                itemStyle: {
+                  borderColor: 'transparent',
+                  borderWidth: 2,
+                  gapWidth: 8
+                },
                 colorSaturation: [0.4, 0.6]
               },
               {
