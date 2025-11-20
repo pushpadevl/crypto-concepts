@@ -53,6 +53,30 @@
         "name": "Elliptic_curves",
         "files": [
           {
+            "name": "Basics of elliptic curves",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/EC/ec.pdf",
+            "thumbnail": "./images/ec.png",
+            "caption": "Notes to get started with ellitpic curves.",
+            "tags": "ellitpic curves, discriminant, algebraic curves, singular curves, weierstrass, montgomery, edwards, twisted edwards"
+          },
+          {
+            "name": "Bilinear Pairings",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/Pairings/main.pdf",
+            "thumbnail": "./images/blp.png",
+            "caption": "Pairing notes over elliptic curves.",
+            "tags": "pairings, symmetric, weil, tate, bls, barreto lynn scott, naehrig, kachisa, schaefor, embedding degree, twisted curves"
+          },
+          {
+            "name": "BSGS factorization",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/BabyStepGiantStepFactorization/bsgsfactorization.pdf",
+            "thumbnail": "./images/blp.png",
+            "caption": "Discrete-log factorization method.",
+            "tags": "Elliptic curves."
+          },
+          {
             "name": "Bilinear Pairings",
             "type": "file",
             "path": "./Docs/Classical/Elliptic_curves/pairings.pdf",
@@ -320,6 +344,24 @@
       }
     ]
   },
+  "algo":{
+    "name": "Algorithms",
+    "subtopics":[
+      {
+        "name": "Trees",
+        "files":[
+          {
+            "name": "Fenwick tree",
+            "type": "file",
+            "path": "./Docs/Algorithms/FenwickTree/fenwick.pdf",
+            "thumbnail": "./images/fwn.png",
+            "caption": "Notes on binary indexed tree",
+            "tags": "Fenwick tree, binary indexed trees"
+          }
+        ]
+      }
+    ]
+  },
   "math": {
     
     "name": "Mathematics",
@@ -369,15 +411,23 @@
             "thumbnail": "./images/rec.png",
             "caption": "Methods to solve recurrences",
             "tags": "recurrences, exponential, polynomial, characteristic equation, homogenous part, forcing function"
-          },{
+          },
+          {
             "name": "Laszlo Babai_notes",
             "type": "file",
             "path": "./Docs/Number_Theory/Discrete_maths/laszlobabai_notes.pdf",
             "thumbnail": "./images/default.jpg",
             "caption": "Notes on discrete maths by Laszlo Babai",
             "tags": "Laszlo Babai, discrete mathematics, combinatorics, graph theory, algorithms, complexity, lecture notes"
+          },
+          {
+            "name": "BSGS factorization",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/BabyStepGiantStepFactorization/bsgsfactorization.pdf",
+            "thumbnail": "./images/blp.png",
+            "caption": "Discrete-log factorization method.",
+            "tags": "Elliptic curves."
           }
-
         ]
       },
       {
@@ -485,7 +535,15 @@
             "thumbnail": "./images/default.jpg",
             "caption": "Test for a prime",
             "tags": "Solovay-Strassen primality test, probabilistic testing, prime numbers, modular arithmetic, gcd, totient"
-            }
+            },
+          {
+            "name": "Finding inverse modulo prime",
+            "type": "file",
+            "path": "./Docs/Classical/Elliptic_curves/Euclidean/inverse.pdf",
+            "thumbnail": "./images/blp.png",
+            "caption": "Using Extended euclidean method to find inverse modulo prime",
+            "tags": "Field arithemtics, extended euclidean"
+          }
         ]
       }
     ]
@@ -513,8 +571,19 @@
             "tags": "Shors factoring, number theory, quantum cryptography"
           }
         ]
-      },
-      {
+      },{
+        "name":"Pseudorandomness",
+        "files":[
+          {
+          "name": "Pseudorandomness",
+          "type" : "file",
+          "path": "./Docs/Classical/PseudoRandomness/main.pdf",
+          "thumbnail": "default.jpg",
+          "caption":"Notes on pseudo randomness",
+          "tags" : "Pseudorandom, generator, function, permutation"
+          }
+        ]
+      },{
         "name": "Handwritten notes",
         "files": [
           {
