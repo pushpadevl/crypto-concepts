@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{mathpazo}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tikz}
+\usepackage{eso-pic}
+
+\usepackage{tabularx}
+%\usepackage{textcomp}
+%new commands
+\newcommand{\theorem}[2]{\\\textbf{#1}, #2 \\}
+\newcommand{\define}[2]{\textbf{#1 $\xrightarrow{}$}, #2 \\}
+\newcommand{\function}[2]{$#1$, $#2$\\}
+
+\newcommand{\communicate}[3]{\begin{center} #1  $\longrightarrow{#2}$  #3 \end{center}}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node at (current page) {\includegraphics[width=1.2\paperwidth]{./img/oo.jpg}};
+  \end{tikzpicture}%
+}
+\title{Multi Party computation}
+
+\author{Pushpendra Pal}
+\date{Nov 2025}
+
+\begin{document}
+
+\maketitle Notes from Shoup
+\\\\
+\textbf{Keywords:} 
+\section{Garbled circuit}
+\begin{tabular}{l l@{}}
+  Garbled Circuit & Beaver's \\
+\hline \\
+  Boolean circuit  & Arithmetic circuit \\
+  Constant rounds of communication needed & \#Rounds depend on \#multiply gates \\
+  3-party protocol & 2.5 party protocol \\
+  In preprocessing as well as line \newline execution 3rd party is involved & Processor not \newline involved during line execution of protocol \\
+
+\end{tabular}
+
+\section{Yao's 2 party GC}
+\begin{tabularx}{1\linewidth}{p{2cm} X}
+\textbf{\underline{Garble (f)}} & \begin{itemize}  \item Circuit garbling algorithm
+  \item (f) : boolean circuit
+  \item e: input encoding data
+  \item d: input decoding data
+  \item ($\mathfrak{F}$, e, d) $\xleftarrow{}$ Garble(f)
+\end{itemize} \\
+\underline{\textbf{$F_{encode}$}} & 
+\begin{itemize}
+  \item $\mathfrak{X}$ $\xleftarrow{}$ Encode(e,x), where x is a vector of bits (input of all parties)
+\end{itemize}
+\textbf{\underline($F_{encode}$)} & 
+\begin{itemize}
+  \item $\mathfrak{X}$ $\xleftarrow{}$ Encode(e,x), where x is a vector of bits (input of all parties)
+\end{itemize}
+\end{tabularx}
+
+\end{document}
