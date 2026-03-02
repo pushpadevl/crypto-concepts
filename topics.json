@@ -479,6 +479,15 @@
             "caption": "Group theory notes",
             "tags": "Quadratic residues, Field extensions, Polynomial irreducibility, Group theory"
           },
+          
+          {
+            "name": "Quadratic residues over GF(2) extension fields",
+            "type": "file",
+            "path": "./Docs/Number_Theory/Primes/qr_non_bin_field.pdf",
+            "thumbnail": "./images/qr.png",
+            "caption": "quadratic residues over binary extension fields",
+            "tags": "Quadratic residues, Field extensions, Group theory, galois field"
+          },
           {
             "name": "Primality testing",
             "type": "file",
